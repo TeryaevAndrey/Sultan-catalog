@@ -4,6 +4,7 @@ import CartImg from "../../assets/images/cart.svg";
 import BurgerImg from "../../assets/images/burger.png";
 import HeaderTop from "./HeaderTop/HeaderTop";
 import { Link } from "react-router-dom";
+import CatalogBtn from "./CatalogBtn";
 
 const Header: FC = () => {
   return (
@@ -37,6 +38,7 @@ const Header: FC = () => {
                     <Link className="w-[156px] h-[66px] overflow-hidden" to="#">
                         <img className="w-full h-full" src={LogoImg} alt="Султан" />
                     </Link>
+                    <CatalogBtn />
                 </div>
             </div>
           </div>
