@@ -3,8 +3,12 @@ import LogoImg from "../../assets/images/logo.svg";
 import CartImg from "../../assets/images/cart.svg";
 import BurgerImg from "../../assets/images/burger.png";
 import HeaderTop from "./HeaderTop/HeaderTop";
+import ManagerImg from "../../assets/images/manager.png";
 import { Link } from "react-router-dom";
 import CatalogBtn from "./CatalogBtn";
+import Search from "../Search";
+import PriceList from "../PriceList";
+import Cart from "./Cart";
 
 const Header: FC = () => {
   return (
@@ -39,6 +43,17 @@ const Header: FC = () => {
                         <img className="w-full h-full" src={LogoImg} alt="Султан" />
                     </Link>
                     <CatalogBtn />
+                    <Search />
+                    <div className="flex items-center gap-3">
+                      <div className="flex flex-col gap-1 text-right">
+                        <a className="text-black-001 font-semibold" href="tel:+77774900091">+7 (777) 490-00-91</a>
+                        <p className="text-gray-001 text-sm font-light">время работы: 9:00-20:00</p>
+                        <a className="text-gray-001 text-[10px] border-b border-gray-001 border-solid w-max ml-auto" href="#">Заказать звонок</a>
+                      </div>
+                      <img className="rounded-[40px]" src={ManagerImg} alt="manager" />
+                    </div>
+                    <PriceList />
+                    <Cart />
                 </div>
             </div>
           </div>

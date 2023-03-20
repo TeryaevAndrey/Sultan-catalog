@@ -9,6 +9,7 @@ module.exports = {
       "orange-001": "#FFC85E",
 
       "gray-001": "#3F4E65",
+      "gray-002": "#EDEDED"
     },
   },
   plugins: [],
