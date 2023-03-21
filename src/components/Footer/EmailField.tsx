@@ -3,7 +3,7 @@ import ArrowRight from "../../assets/images/arrow-right.svg";
 
 const EmailField: FC = () => {
   return (
-    <div className="min-h-[59px] bg-[white] py-2.5 px-2.5 pl-5 rounded-[36px] flex justify-between items-center w-full">
+    <div className="min-h-[59px] bg-[white] py-2.5 px-2.5 pl-5 rounded-[36px] flex justify-between items-center w-full max-w-[282px]">
       <input
         className="bg-[transparent] pr-2.5 text-black-001 placeholder:text-xs placeholder:text-gray-001 text-sm"
         type="text"

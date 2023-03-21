@@ -3,7 +3,7 @@ import MenuLink from "./MenuLink";
 
 const Menu: FC = () => {
   return (
-    <div className="flex items-center gap-x-14">
+    <div className="flex items-center gap-x-5 min-[1100px]:gap-x-14">
       <MenuLink title="О компании" to="/" />
       <MenuLink title="Доставка и оплата" to="/" />
       <MenuLink title="Возврат" to="/" />

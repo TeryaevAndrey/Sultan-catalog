@@ -9,7 +9,7 @@ import EmailField from "./EmailField";
 
 const Footer: FC = () => {
   return (
-    <div className="py-3.5 bg-gray-001">
+    <div className="py-3.5 bg-gray-001 flex lg:hidden">
       <div className="container">
         <div className="flex flex-col">
           <div className="flex justify-between items-center">

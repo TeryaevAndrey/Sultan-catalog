@@ -8,7 +8,7 @@ const HeaderTop: FC = () => {
     <div className="w-full py-3.5">
       <div className="container">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-10">
+          <div className="flex items-center gap-5 min-[1100px]:gap-10">
             <Location />
             <Contact />
           </div>
