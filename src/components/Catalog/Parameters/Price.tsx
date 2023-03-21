@@ -9,13 +9,13 @@ const Price: FC = () => {
 
       <div className="flex items-center gap-5 lg:justify-between mt-4 text-gray-001">
         <input
-          className="w-full max-w-[105px] py-1 px-7 bg-orange-linear-001 text-gray-001 text-center text-xs font-light rounded-full"
+          className="w-full py-1 px-7 bg-orange-linear-001 text-gray-001 text-center text-xs font-light rounded-full"
           type="text"
           placeholder="0"
         />
         <div>-</div>
         <input
-          className="w-full max-w-[105px] py-1 px-7 bg-orange-linear-001 text-gray-001 text-center text-xs font-light rounded-full"
+          className="w-full py-1 px-7 bg-orange-linear-001 text-gray-001 text-center text-xs font-light rounded-full"
           type="text"
           placeholder="10000"
         />

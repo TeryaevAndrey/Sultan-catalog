@@ -6,7 +6,7 @@ const Manufactures: FC = () => {
     return (
         <div className="flex flex-col pb-5 border-b border-dotted border-gray-001/[0.1]">
             <h5 className="text-base font-medium text-black-001">Производитель</h5>
-            <div className="mt-3.5 max-w-[290px]">
+            <div className="mt-3.5 w-full">
                 <Search />
             </div>
             <div className="mt-3.5 flex flex-col">

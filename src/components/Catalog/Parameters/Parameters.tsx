@@ -29,12 +29,12 @@ const Parameters: FC = () => {
         </div>
         <div className="mt-3.5 flex items-center gap-3">
           <button
-            className="bg-orange-001 rounded-[79px] py-5 px-[50px]"
+            className="max-h-[59px] w-full bg-orange-001 rounded-[79px] py-5 px-[50px]"
             type="submit"
           >
             Показать
           </button>
-          <button className="bg-orange-001 rounded-full w-[59px] h-[59px] flex justify-center items-center">
+          <button className="max-h-[59px] bg-orange-001 rounded-full min-w-[59px] w-[59px] h-[59px] flex justify-center items-center">
             <img src={ClearImg} alt="clear" />
           </button>
         </div>
