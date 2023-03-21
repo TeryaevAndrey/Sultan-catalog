@@ -19,9 +19,10 @@ const Crumbs: FC<ICrumbs> = ({ way }) => {
       >
         Главная
       </Link>
-      {way.map((el) => {
+      {way.map((el, index) => {
         return (
           <Link
+            key={index}
             className="opacity-[0.5] relative hover:opacity-[1] [&:not(:last-child)]:after:content-[''] after:absolute after:hidden min-[1100px]:after:block after:-right-[10px] after:border-r after:border-dashed after:border-gray-001/[0.1] after:h-full after:top-[50%] after:translate-y-[-50%]"
             to={el.to}
           >

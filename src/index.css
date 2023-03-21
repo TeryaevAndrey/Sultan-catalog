@@ -29,3 +29,7 @@ input {
   padding: 0 15px;
   margin: 0 auto;
 }
+
+.parameter-checkbox:checked+label::before {
+  background-color: #FFC85E;
+}
