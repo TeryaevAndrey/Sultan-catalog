@@ -9,7 +9,7 @@ import Price from "./Price";
 
 const Parameters: FC = () => {
   return (
-    <div className="flex flex-col mt-5 w-full md:max-w-[240px]">
+    <div className="flex flex-col w-full md:max-w-[240px]">
       <div className="flex items-center justify-between">
         <h3 className="uppercase text-base font-medium text-black-001">
           ПОДБОР ПО ПАРАМЕТРАМ
