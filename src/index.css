@@ -16,6 +16,7 @@ body {
   font-weight: 400;
   color: #fff;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 input {
