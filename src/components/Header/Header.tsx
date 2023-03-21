@@ -38,7 +38,7 @@ const Header: FC = () => {
           <HeaderTop />
           <div className="py-5 border-gray-001/[0.1] border-y border-solid">
             <div className="container">
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center gap-2.5">
                     <Link className="w-[156px] h-[66px] overflow-hidden" to="#">
                         <img className="w-full h-full" src={LogoImg} alt="Султан" />
                     </Link>
@@ -52,7 +52,9 @@ const Header: FC = () => {
                       </div>
                       <img className="rounded-[40px]" src={ManagerImg} alt="manager" />
                     </div>
+                    <div className="hidden min-[1100px]:block">
                     <PriceList />
+                    </div>
                     <Cart />
                 </div>
             </div>
