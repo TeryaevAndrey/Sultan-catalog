@@ -4,7 +4,7 @@ import DownloadImg from "../assets/images/download.svg";
 const PriceList: FC = () => {
   return (
     <a
-      className="rounded-[80px] bg-orange-001 text-white flex items-center gap-3 py-[22px] px-[43px] font-bold max-h-[59px]"
+      className="rounded-[80px] bg-orange-001 text-white flex items-center gap-3 text-xs lg:text-sm  py-3.5 px-7 lg:py-[22px] lg:px-[43px] font-bold max-h-[59px]"
       href="#"
     >
       Прайс-лист

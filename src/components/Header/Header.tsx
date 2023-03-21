@@ -35,30 +35,46 @@ const Header: FC = () => {
       </header>
 
       <header className="hidden lg:block">
-          <HeaderTop />
-          <div className="py-5 border-gray-001/[0.1] border-y border-solid">
-            <div className="container">
-                <div className="flex justify-between items-center gap-2.5">
-                    <Link className="w-[156px] h-[66px] overflow-hidden" to="#">
-                        <img className="w-full h-full" src={LogoImg} alt="Султан" />
-                    </Link>
-                    <CatalogBtn />
-                    <Search />
-                    <div className="flex items-center gap-3">
-                      <div className="flex flex-col gap-1 text-right">
-                        <a className="text-black-001 font-semibold" href="tel:+77774900091">+7 (777) 490-00-91</a>
-                        <p className="text-gray-001 text-sm font-light">время работы: 9:00-20:00</p>
-                        <a className="text-gray-001 text-[10px] border-b border-gray-001 border-solid w-max ml-auto" href="#">Заказать звонок</a>
-                      </div>
-                      <img className="rounded-[40px]" src={ManagerImg} alt="manager" />
-                    </div>
-                    <div className="hidden min-[1100px]:block">
-                    <PriceList />
-                    </div>
-                    <Cart />
+        <HeaderTop />
+        <div className="py-5 border-gray-001/[0.1] border-y border-solid">
+          <div className="container">
+            <div className="flex justify-between items-center gap-2.5">
+              <Link className="w-[156px] h-[66px] overflow-hidden" to="#">
+                <img className="w-full h-full" src={LogoImg} alt="Султан" />
+              </Link>
+              <CatalogBtn />
+              <Search />
+              <div className="flex items-center gap-3">
+                <div className="flex flex-col gap-1 text-right">
+                  <a
+                    className="text-black-001 font-semibold"
+                    href="tel:+77774900091"
+                  >
+                    +7 (777) 490-00-91
+                  </a>
+                  <p className="text-gray-001 text-sm font-light">
+                    время работы: 9:00-20:00
+                  </p>
+                  <a
+                    className="text-gray-001 text-[10px] border-b border-gray-001 border-solid w-max ml-auto"
+                    href="#"
+                  >
+                    Заказать звонок
+                  </a>
                 </div>
+                <img
+                  className="rounded-[40px]"
+                  src={ManagerImg}
+                  alt="manager"
+                />
+              </div>
+              <div className="hidden min-[1100px]:block">
+                <PriceList />
+              </div>
+              <Cart />
             </div>
           </div>
+        </div>
       </header>
     </>
   );
