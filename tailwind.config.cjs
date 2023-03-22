@@ -10,6 +10,8 @@ module.exports = {
 
       "gray-001": "#3F4E65",
       "gray-002": "#EDEDED",
+
+      "green-001": "#1FD85D"
     },
     backgroundImage: {
       "orange-linear-001":
