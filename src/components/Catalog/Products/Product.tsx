@@ -4,7 +4,7 @@ import WeightImg from "../../../assets/images/product/weight.svg";
 
 const Product: FC = () => {
   return (
-    <div className="w-full rounded-[10px] flex flex-col bg-[white] shadow-lg px-6 py-7">
+    <div className="w-full rounded-[10px] flex flex-col bg-[white] shadow-lg px-6 py-7 ease-linear duration-200 lg:hover:scale-[1.008]">
       <img
         className="max-h-[194px] object-contain"
         src={ProductImg}
