@@ -39,7 +39,7 @@ const Header: FC = () => {
         <div className="py-5 border-gray-001/[0.1] border-y border-solid">
           <div className="container">
             <div className="flex justify-between items-center gap-2.5">
-              <Link className="w-[156px] h-[66px] overflow-hidden" to="#">
+              <Link className="w-[156px] h-[66px] overflow-hidden" to="/">
                 <img className="w-full h-full" src={LogoImg} alt="Султан" />
               </Link>
               <CatalogBtn />

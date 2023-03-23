@@ -12,7 +12,12 @@ const ProductPage: FC = () => {
   return (
     <section className="py-6">
       <div className="container">
-        <Crumbs way={[{ title: "Продукт", to: "/asd" }]} />
+        <Crumbs
+          way={[
+            { title: "Каталог", to: "/" },
+            { title: "001230121211", to: "/" },
+          ]}
+        />
         <div className="lg:flex items-start justify-between gap-10">
           <div className="w-full lg:w-[50%]">
             <img
@@ -41,30 +46,36 @@ const ProductPage: FC = () => {
                 </div>
               </div>
             </div>
-            <div className="p-5 bg-white shadow-sm rounded-[10px] text-center text-xs text-gray-001 mt-5">
-              <p>
-                При покупке от <span className="font-bold">10 000 ₸</span>{" "}
-                бесплатная доставка по Кокчетаву и области
-              </p>
-            </div>
-            <a
-              className="p-5 bg-white mt-2.5 shadow-sm rounded-[10px] flex justify-center items-center gap-2.5 text-sm font-bold text-gray-001"
-              href="#"
-            >
-              <span>Прайс-лист</span>
-              <svg
-                width="18"
-                height="17"
-                viewBox="0 0 18 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            <div className="flex flex-col lg:flex-row lg:items-center lg:gap-2.5 lg:mt-5">
+              <div className="hidden lg:block">
+                <Share />
+              </div>
+
+              <div className="p-5 bg-white shadow-sm rounded-[10px] text-center text-xs text-gray-001 mt-5 lg:mt-0 lg:max-w-[316px] lg:min-h-[77px]">
+                <p>
+                  При покупке от <span className="font-bold">10 000 ₸</span>{" "}
+                  бесплатная доставка по Кокчетаву и области
+                </p>
+              </div>
+              <a
+                className="p-5 bg-white mt-2.5 lg:mt-0 lg:min-h-[77px] shadow-sm rounded-[10px] flex justify-center items-center gap-2.5 text-sm font-bold text-gray-001"
+                href="#"
               >
-                <path
-                  d="M13.958 6.375H11.1247V2.125H6.87467V6.375H4.04134L8.99967 12.0417L13.958 6.375ZM3.33301 13.4583H14.6663V14.875H3.33301V13.4583Z"
-                  fill="#3F4E65"
-                />
-              </svg>
-            </a>
+                <span>Прайс-лист</span>
+                <svg
+                  width="18"
+                  height="17"
+                  viewBox="0 0 18 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.958 6.375H11.1247V2.125H6.87467V6.375H4.04134L8.99967 12.0417L13.958 6.375ZM3.33301 13.4583H14.6663V14.875H3.33301V13.4583Z"
+                    fill="#3F4E65"
+                  />
+                </svg>
+              </a>
+            </div>
             <div className="mt-5">
               <Characteristics />
             </div>

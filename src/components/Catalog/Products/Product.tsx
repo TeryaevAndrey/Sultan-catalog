@@ -3,10 +3,11 @@ import ProductImg from "../../../assets/images/products/product-1.png";
 import ToCartBtn from "../../ToCartBtn";
 import Characteristics from "../../Characteristics";
 import Weight from "../../Product/Weight";
+import { Link } from "react-router-dom";
 
 const Product: FC = () => {
   return (
-    <div className="w-full rounded-[10px] flex flex-col bg-[white] shadow-lg px-6 py-7 ease-linear duration-200 lg:hover:scale-[1.008]">
+    <Link className="w-full rounded-[10px] flex flex-col bg-[white] shadow-lg px-6 py-7 ease-linear duration-200 lg:hover:scale-[1.008]" to="/asdasd">
       <img
         className="max-h-[194px] object-contain"
         src={ProductImg}
@@ -26,7 +27,7 @@ const Product: FC = () => {
         <p className="text-black-001 font-extrabold text-base">48,76 ₸</p>
         <ToCartBtn />
       </div>
-    </div>
+    </Link>
   );
 };
 
