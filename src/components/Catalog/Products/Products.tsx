@@ -25,12 +25,9 @@ const Products: FC = () => {
               img={product.img}
               typeWeight={product.typeWeight}
               weightValue={product.weightValue}
-              hatch={product.hatch}
-              manufacturer={product.manufacturer}
-              brand={product.brand}
               description={product.description}
               price={product.price}
-              typeCare={product.typeCare}
+              parameters={product.parameters}
             />
           );
         })}

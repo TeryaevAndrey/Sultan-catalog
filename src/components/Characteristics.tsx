@@ -7,7 +7,12 @@ interface ICharacteristics {
   typeCare: string[];
 }
 
-const Characteristics: FC<ICharacteristics> = ({hatch, manufacturer, brand, typeCare}) => {
+const Characteristics: FC<ICharacteristics> = ({
+  hatch,
+  manufacturer,
+  brand,
+  typeCare,
+}) => {
   return (
     <div className="flex flex-col gap-1">
       <div className="flex items-center gap-1 font-light text-gray-001">
@@ -25,11 +30,9 @@ const Characteristics: FC<ICharacteristics> = ({hatch, manufacturer, brand, type
       <div className="flex items-center gap-1 font-light text-gray-001 truncate">
         <span>Тип ухода:</span>
         <span className="text-black-001 font-medium">
-          {
-            typeCare.map((el, index) => {
-              return `${el}${index !== typeCare.length - 1 ? "," : ""} `;
-            })
-          }
+          {typeCare.map((el, index) => {
+            return `${el}${index !== typeCare.length - 1 ? "," : ""} `;
+          })}
         </span>
       </div>
     </div>

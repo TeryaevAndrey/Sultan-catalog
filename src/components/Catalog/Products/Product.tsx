@@ -14,11 +14,8 @@ const Product: FC<IProduct> = ({
   description,
   typeWeight,
   weightValue,
-  hatch,
-  manufacturer,
-  brand,
   price,
-  typeCare,
+  parameters,
 }) => {
   const dispatch = useAppDispatch();
 
@@ -35,11 +32,8 @@ const Product: FC<IProduct> = ({
             description,
             typeWeight,
             weightValue,
-            hatch,
-            manufacturer,
-            brand,
             price,
-            typeCare,
+            parameters,
           })
         );
 
@@ -52,11 +46,8 @@ const Product: FC<IProduct> = ({
             description,
             typeWeight,
             weightValue,
-            hatch,
-            manufacturer,
-            brand,
             price,
-            typeCare,
+            parameters,
           })
         );
       }}
@@ -70,10 +61,10 @@ const Product: FC<IProduct> = ({
         </p>
         <div className="mt-3.5">
           <Characteristics
-            hatch={hatch}
-            manufacturer={manufacturer}
-            brand={brand}
-            typeCare={typeCare}
+            hatch={parameters.hatch}
+            manufacturer={parameters.manufacturer}
+            brand={parameters.brand}
+            typeCare={parameters.typeCare}
           />
         </div>
       </div>

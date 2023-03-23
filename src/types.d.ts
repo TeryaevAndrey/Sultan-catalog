@@ -13,10 +13,12 @@ interface IProduct {
   title: string;
   typeWeight: string;
   weightValue: number;
-  hatch: number;
-  manufacturer: string;
-  brand: string;
   description: string;
   price: number;
-  typeCare: string[];
+  parameters: {
+    hatch: number;
+    manufacturer: string;
+    brand: string;
+    typeCare: string[];
+  };
 }

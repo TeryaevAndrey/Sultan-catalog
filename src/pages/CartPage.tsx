@@ -11,7 +11,7 @@ const CartPage: FC = () => {
         <div className="lg:hidden mb-5">
           <Back />
         </div>
-        <Crumbs way={[{title: "Корзина", to: "/cart"}]} />
+        <Crumbs way={[{ title: "Корзина", to: "/cart" }]} />
         <Title title="Корзина" />
         <div className="mt-5">
           <CartProducts />

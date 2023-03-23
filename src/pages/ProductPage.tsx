@@ -8,10 +8,16 @@ import Share from "../components/Share";
 import Characteristics from "../components/Characteristics";
 import ArrowBottomImg from "../assets/images/sort-arrow.svg";
 import Back from "../components/Back";
+import { useAppSelector } from "../store/hooks";
+import Weight from "../components/Product/Weight";
 
 const ProductPage: FC = () => {
+  const product =
+    JSON.parse(localStorage.getItem("currentProduct") || "{}") ||
+    useAppSelector((state) => state.products.currentProduct);
+
   return (
-    <section className="pb-6">
+    <section className="pb-12">
       <div className="container">
         <div className="lg:hidden mb-5">
           <Back />
@@ -25,23 +31,26 @@ const ProductPage: FC = () => {
         <div className="lg:flex items-start justify-between gap-10">
           <div className="w-full lg:w-[50%]">
             <img
-              className="w-full object-contain"
-              src={ProductImg}
+              className="w-full object-contain max-h-[471px]"
+              src={product.img}
               alt="product"
             />
           </div>
           <div className="flex flex-col w-full lg:w-[50%]">
             <p className="text-green-001 font-medium">В наличии</p>
             <h1 className="text-base lg:text-3xl text-black-001 mt-2.5">
-              <span className="font-extrabold">BioMio BIO-SOAP</span>{" "}
-              Экологичное туалетное мыло. Литсея и бергамот
+              <span className="font-extrabold">
+                {product.title.split(" ")[0]}
+              </span>{" "}
+              {product.title.split(" ").slice(1).join(" ")}
             </h1>
-            <div className="hidden md:flex items-center gap-1 mt-2.5">
-              <img className="w-[20px] h-[14px]" src={WeightImg} alt="weight" />
-              <p className="text-xs text-gray-001">90 г</p>
+            <div className="mt-2.5">
+              <Weight type={product.typeWeight} value={product.weightValue} />
             </div>
             <div className="flex items-center flex-wrap gap-7 mt-5">
-              <p className="font-extrabold text-xl text-black-001">48,76 ₸</p>
+              <p className="font-extrabold text-xl lg:text-3xl text-black-001">
+                {product.price} ₸
+              </p>
               <Counter />
               <div className="flex items-center justify-between gap-7">
                 <ToCartBtn />
@@ -81,7 +90,12 @@ const ProductPage: FC = () => {
               </a>
             </div>
             <div className="mt-5">
-              {/* <Characteristics /> */}
+              <Characteristics
+                hatch={product.parameters.hatch}
+                manufacturer={product.parameters.manufacturer}
+                brand={product.parameters.brand}
+                typeCare={product.parameters.typeCare}
+              />
             </div>
             <div className="flex flex-col mt-2.5">
               <div className="border-b border-gray-001/[0.3] border-dotted py-5 flex items-center gap-1 text-base text-black-001 font-medium cursor-pointer">
