@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 const Counter: FC = () => {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center">
       <button className="w-[34px] h-[23px] rounded-full bg-orange-001/[0.3] text-gray-001 flex justify-center items-center">
         -
       </button>

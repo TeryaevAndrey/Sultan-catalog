@@ -30,6 +30,6 @@ input {
   margin: 0 auto;
 }
 
-.parameter-checkbox:checked+label::before {
-  background-color: #FFC85E;
+.parameter-checkbox:checked + label::before {
+  background-color: #ffc85e;
 }

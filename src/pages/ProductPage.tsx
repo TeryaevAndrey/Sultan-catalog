@@ -5,10 +5,12 @@ import Crumbs from "../components/Crumbs";
 import Counter from "../components/Product/Counter";
 import ToCartBtn from "../components/ToCartBtn";
 import Share from "../components/Share";
+import Characteristics from "../components/Characteristics";
+import ArrowBottomImg from "../assets/images/sort-arrow.svg";
 
 const ProductPage: FC = () => {
   return (
-    <div>
+    <section className="py-6">
       <div className="container">
         <Crumbs way={[{ title: "Продукт", to: "/asd" }]} />
         <div className="lg:flex items-start justify-between gap-10">
@@ -39,10 +41,47 @@ const ProductPage: FC = () => {
                 </div>
               </div>
             </div>
+            <div className="p-5 bg-white shadow-sm rounded-[10px] text-center text-xs text-gray-001 mt-5">
+              <p>
+                При покупке от <span className="font-bold">10 000 ₸</span>{" "}
+                бесплатная доставка по Кокчетаву и области
+              </p>
+            </div>
+            <a
+              className="p-5 bg-white mt-2.5 shadow-sm rounded-[10px] flex justify-center items-center gap-2.5 text-sm font-bold text-gray-001"
+              href="#"
+            >
+              <span>Прайс-лист</span>
+              <svg
+                width="18"
+                height="17"
+                viewBox="0 0 18 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.958 6.375H11.1247V2.125H6.87467V6.375H4.04134L8.99967 12.0417L13.958 6.375ZM3.33301 13.4583H14.6663V14.875H3.33301V13.4583Z"
+                  fill="#3F4E65"
+                />
+              </svg>
+            </a>
+            <div className="mt-5">
+              <Characteristics />
+            </div>
+            <div className="flex flex-col mt-2.5">
+              <div className="border-b border-gray-001/[0.3] border-dotted py-5 flex items-center gap-1 text-base text-black-001 font-medium cursor-pointer">
+                <span>Описание</span>
+                <img src={ArrowBottomImg} alt="open" />
+              </div>
+              <div className="py-5 flex items-center gap-1 text-base text-black-001 font-medium cursor-pointer">
+                <span>Характеристики</span>
+                <img src={ArrowBottomImg} alt="open" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

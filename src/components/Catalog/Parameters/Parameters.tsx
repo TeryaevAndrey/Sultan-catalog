@@ -1,7 +1,6 @@
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
 import ArrowTopImg from "../../../assets/images/arrow-top.svg";
-import ClearImg from "../../../assets/images/clear.svg";
+import Delete from "../../Delete";
 import Sort from "../../Sort";
 import Categories from "./Categories/Categories";
 import Manufactures from "./Manufactures";
@@ -34,9 +33,7 @@ const Parameters: FC = () => {
           >
             Показать
           </button>
-          <button className="max-h-[59px] bg-orange-001 rounded-full min-w-[59px] w-[59px] h-[59px] flex justify-center items-center">
-            <img src={ClearImg} alt="clear" />
-          </button>
+          <Delete />
         </div>
       </form>
       <Categories
