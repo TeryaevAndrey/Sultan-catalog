@@ -53,7 +53,7 @@ const Product: FC<IProduct> = ({
       }}
     >
       <img className="max-h-[194px] object-contain" src={img} alt="product" />
-      <div className="flex flex-col">
+      <div className="flex flex-col mb-3.5">
         <Weight type={typeWeight} value={weightValue} />
         <p className="text-black-001 font-medium mt-2.5">
           <span className="font-bold text-base">{title.split(" ")[0]}</span>{" "}
