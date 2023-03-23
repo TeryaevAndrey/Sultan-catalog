@@ -25,7 +25,7 @@ const ProductPage: FC = () => {
         <Crumbs
           way={[
             { title: "Каталог", to: "/" },
-            { title: "001230121211", to: "/" },
+            { title: `${product.title}`, to: `/${product.id}` },
           ]}
         />
         <div className="lg:flex items-start justify-between gap-10">
@@ -98,14 +98,16 @@ const ProductPage: FC = () => {
               />
             </div>
             <div className="flex flex-col mt-2.5">
-              <div className="border-b border-gray-001/[0.3] border-dotted py-5 flex items-center gap-1 text-base text-black-001 font-medium cursor-pointer">
-                <span>Описание</span>
-                <img src={ArrowBottomImg} alt="open" />
+              <div>
+                <div className="border-b border-gray-001/[0.3] border-dotted py-5 flex items-center gap-1 text-base text-black-001 font-medium cursor-pointer">
+                  <span>Описание</span>
+                  <img src={ArrowBottomImg} alt="open" />
+                </div>
               </div>
-              <div className="py-5 flex items-center gap-1 text-base text-black-001 font-medium cursor-pointer">
+              {/* <div className="py-5 flex items-center gap-1 text-base text-black-001 font-medium cursor-pointer">
                 <span>Характеристики</span>
                 <img src={ArrowBottomImg} alt="open" />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

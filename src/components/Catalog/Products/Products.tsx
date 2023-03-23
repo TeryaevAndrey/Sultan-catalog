@@ -6,7 +6,9 @@ import Product from "./Product";
 import productsData from "./products.json";
 
 const Products: FC = () => {
-  const products = useAppSelector((state) => state.products.productsList);
+  const products: IProduct[] =
+    JSON.parse(localStorage.getItem("products")!) ||
+    useAppSelector((state) => state.products.productsList);
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
