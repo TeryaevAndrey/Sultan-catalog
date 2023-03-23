@@ -6,7 +6,7 @@ import Title from "../components/Title";
 
 const CartPage: FC = () => {
   return (
-    <section className="py-6 pb-12">
+    <section className="pb-12">
       <div className="container">
         <div className="lg:hidden mb-5">
           <Back />

@@ -16,7 +16,9 @@ const CatalogPage: FC = () => {
         <Crumbs way={[{ title: "Косметика и гигиена", to: "/" }]} />
         <div className="mt-6 lg:mt-0 flex items=center justify-between">
           <Title title="Косметика и гигиена" />
-          <Sort />
+          <div className="hidden md:block">
+            <Sort />
+          </div>
         </div>
         <div className="mt-5">
           <CategoriesSlider

@@ -11,7 +11,7 @@ import Back from "../components/Back";
 
 const ProductPage: FC = () => {
   return (
-    <section className="py-6">
+    <section className="pb-6">
       <div className="container">
         <div className="lg:hidden mb-5">
           <Back />
@@ -81,7 +81,7 @@ const ProductPage: FC = () => {
               </a>
             </div>
             <div className="mt-5">
-              <Characteristics />
+              {/* <Characteristics /> */}
             </div>
             <div className="flex flex-col mt-2.5">
               <div className="border-b border-gray-001/[0.3] border-dotted py-5 flex items-center gap-1 text-base text-black-001 font-medium cursor-pointer">

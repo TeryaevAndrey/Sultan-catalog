@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "img": "https://pr0.zoon.ru/roXL8ppne7wvfJLAdwHWWA/2080x4232,q90/W2Wjf8C0GZwMGAfH5etaIjIeG6J87q4_g8JVB7bTiVsed9oGMnC6vFv-Vyn1u4koFCltF7wlH_LQV-SMM7e_xQ",
+    "title": "AOS средство для мытья посуды Crystal",
+    "typeWeight": "volume",
+    "weightValue": 450,
+    "hatch": 111111111,
+    "manufacturer": "Нэфис",
+    "brand": "AOS",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 48.76,
+    "typeCare": ["Уход за одеждой"]
+  },
+  {
+    "id": 2,
+    "img": "https://cdn.rf.market/360161/Ariel-avtomat3.png",
+    "title": "ARIEL стиральный порошок",
+    "typeWeight": "volume",
+    "weightValue": 450,
+    "hatch": 222222222,
+    "manufacturer": "Нэфис",
+    "brand": "ARIEL",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 48.76,
+    "typeCare": ["Уход за одеждой"]
+  }
+]
