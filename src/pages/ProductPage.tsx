@@ -7,11 +7,15 @@ import ToCartBtn from "../components/ToCartBtn";
 import Share from "../components/Share";
 import Characteristics from "../components/Characteristics";
 import ArrowBottomImg from "../assets/images/sort-arrow.svg";
+import Back from "../components/Back";
 
 const ProductPage: FC = () => {
   return (
     <section className="py-6">
       <div className="container">
+        <div className="lg:hidden mb-5">
+          <Back />
+        </div>
         <Crumbs
           way={[
             { title: "Каталог", to: "/" },

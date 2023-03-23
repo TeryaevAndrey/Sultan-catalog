@@ -21,15 +21,15 @@ const Header: FC = () => {
               src={BurgerImg}
               alt="menu"
             />
-            <Link className="w-24 h-10 overflow-hidden" to="#">
+            <Link className="w-24 h-10 overflow-hidden" to="/">
               <img className="w-full h-full" src={LogoImg} alt="Султан" />
             </Link>
-            <div className="relative cursor-pointer">
+            <Link className="relative cursor-pointer" to="/cart">
               <img className="w-6 h-6" src={CartImg} alt="cart" />
               <div className="flex justify-center items-center absolute w-5 h-5 -top-[6px] -right-[6px] bg-orange-001 rounded-full border-[3px] border-white border-solid">
                 <span className="font-bold text-[10px] text-white">3</span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </header>
