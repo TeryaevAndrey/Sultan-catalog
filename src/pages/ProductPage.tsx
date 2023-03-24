@@ -1,6 +1,4 @@
 import React, { FC } from "react";
-import ProductImg from "../assets/images/products/product-2.png";
-import WeightImg from "../assets/images/product/weight.svg";
 import Crumbs from "../components/Crumbs";
 import Counter from "../components/Product/Counter";
 import ToCartBtn from "../components/ToCartBtn";
