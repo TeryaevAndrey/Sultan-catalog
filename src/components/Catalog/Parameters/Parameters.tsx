@@ -3,7 +3,7 @@ import ArrowTopImg from "../../../assets/images/arrow-top.svg";
 import Delete from "../../Delete";
 import Sort from "../../Sort";
 import Categories from "./Categories/Categories";
-import Manufactures from "./Manufactures";
+import Manufactures from "./Manufacturers/Manufactures";
 import Price from "./Price";
 
 const Parameters: FC = () => {
