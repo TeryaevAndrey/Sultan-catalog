@@ -2,13 +2,19 @@ import React, { FC } from "react";
 import Search from "../../../Search";
 import SortArrowImg from "../../../../assets/images/sort-arrow.svg";
 import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
-import { setSearchValue } from "../../../../store/parametersSlice";
+import {
+  setSearchValue,
+  setManufacturersSelected,
+} from "../../../../store/parametersSlice";
 import ManufacturersItem from "./ManufacturersItem";
 
 const Manufactures: FC = () => {
   const dispatch = useAppDispatch();
   const products = useAppSelector((state) => state.products.productsList);
   const searchValue = useAppSelector((state) => state.parameters.searchValue);
+  const manufacturersSelected = useAppSelector(
+    (state) => state.parameters.manufacturersSelected
+  );
   const [searchManufacturers, setSearchManufacturers] = React.useState<
     string[]
   >([]);
@@ -41,6 +47,20 @@ const Manufactures: FC = () => {
     setIsAll(true);
   };
 
+  const changeCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+
+    if (e.target.checked) {
+      dispatch(setManufacturersSelected([...manufacturersSelected, value]));
+    } else {
+      dispatch(
+        setManufacturersSelected(
+          manufacturersSelected.filter((item) => item !== value)
+        )
+      );
+    }
+  };
+
   return (
     <div className="flex flex-col pb-5 border-b border-dotted border-gray-001/[0.1]">
       <h5 className="text-base font-medium text-black-001">Производитель</h5>
@@ -55,19 +75,37 @@ const Manufactures: FC = () => {
         {searchManufacturers.length > 0
           ? searchManufacturers.map((manufacturer, index) => {
               return (
-                <ManufacturersItem manufacturer={manufacturer} key={index} />
+                <ManufacturersItem
+                  onChange={changeCheckbox}
+                  checked={manufacturersSelected.includes(manufacturer)}
+                  manufacturer={manufacturer}
+                  key={index}
+                  value={manufacturer}
+                />
               );
             })
           : manufacturers.slice(0, 4).map((manufacturer, index) => {
               return (
-                <ManufacturersItem manufacturer={manufacturer} key={index} />
+                <ManufacturersItem
+                  onChange={changeCheckbox}
+                  checked={manufacturersSelected.includes(manufacturer)}
+                  manufacturer={manufacturer}
+                  key={index}
+                  value={manufacturer}
+                />
               );
             })}
 
         {isAll &&
           manufacturers.slice(3).map((manufacturer, index) => {
             return (
-              <ManufacturersItem manufacturer={manufacturer} key={index} />
+              <ManufacturersItem
+                onChange={changeCheckbox}
+                checked={manufacturersSelected.includes(manufacturer)}
+                manufacturer={manufacturer}
+                key={index}
+                value={manufacturer}
+              />
             );
           })}
 

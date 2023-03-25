@@ -3,9 +3,17 @@ import { useAppSelector } from "../../../../store/hooks";
 
 interface IManufacturersItem {
   manufacturer: string;
+  onChange: React.ChangeEventHandler;
+  checked: boolean;
+  value: string;
 }
 
-const ManufacturersItem: FC<IManufacturersItem> = ({ manufacturer }) => {
+const ManufacturersItem: FC<IManufacturersItem> = ({
+  manufacturer,
+  onChange,
+  checked,
+  value
+}) => {
   const products = useAppSelector((state) => state.products.productsList);
 
   return (
@@ -15,6 +23,9 @@ const ManufacturersItem: FC<IManufacturersItem> = ({ manufacturer }) => {
         type="checkbox"
         name="manufacturer"
         id={manufacturer}
+        onChange={onChange}
+        checked={checked}
+        value={value}
       />
       <label
         className="flex items-center gap-1 text-gray-001 cursor-pointer before:content-[''] before:absolute before:left-0 before:w-[10px] before:h-[10px] before:border before:border-gray-001 before:border-solid"
