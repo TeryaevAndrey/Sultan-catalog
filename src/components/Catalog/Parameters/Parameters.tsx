@@ -1,12 +1,50 @@
 import React, { FC } from "react";
 import ArrowTopImg from "../../../assets/images/arrow-top.svg";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { setProductsList, setProductsListFiltered } from "../../../store/productsSlice";
 import Delete from "../../Delete";
 import Sort from "../../Sort";
 import Categories from "./Categories/Categories";
 import Manufactures from "./Manufacturers/Manufactures";
 import Price from "./Price";
+import productsData from "../../Catalog/Products/products.json";
 
 const Parameters: FC = () => {
+  const dispatch = useAppDispatch();
+  const priceBefore = useAppSelector((state) => state.parameters.priceBefore);
+  const priceAfter = useAppSelector((state) => state.parameters.priceAfter);
+  const manufacturersSelected = useAppSelector(
+    (state) => state.parameters.manufacturersSelected
+  );
+  const products = useAppSelector((state) => state.products.productsList);
+
+  const formHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const filteredProducts = products.filter((product) => {
+      const productPrice = Math.round(product.price);
+
+      if (priceBefore && priceAfter) {
+        return (
+          productPrice >= Number(priceBefore) &&
+          productPrice <= Number(priceAfter)
+        );
+      }
+
+      if (priceBefore) {
+        return productPrice >= Number(priceBefore);
+      }
+
+      if (priceAfter) {
+        return productPrice <= Number(priceAfter);
+      }
+
+      return true;
+    });
+
+    dispatch(setProductsListFiltered(filteredProducts));
+  };
+
   return (
     <div className="flex flex-col w-full md:max-w-[240px]">
       <div className="flex items-center justify-between">
@@ -21,7 +59,7 @@ const Parameters: FC = () => {
           />
         </button>
       </div>
-      <form className="mt-4 lg:mt-2.5">
+      <form className="mt-4 lg:mt-2.5" onSubmit={formHandler}>
         <Price />
         <div className="mt-7">
           <Manufactures />
