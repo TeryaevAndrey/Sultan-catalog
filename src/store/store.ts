@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { catalogSlice } from "./catalogSlice";
+import { parametersSlice } from "./parametersSlice";
 import { productsSlice } from "./productsSlice";
 
 export const store = configureStore({
   reducer: {
     products: productsSlice.reducer,
-    catalog: catalogSlice.reducer
+    catalog: catalogSlice.reducer,
+    parameters: parametersSlice.reducer
   },
 });
 
