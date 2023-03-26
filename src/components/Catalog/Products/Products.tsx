@@ -12,29 +12,39 @@ const Products: FC = () => {
     useAppSelector((state) => state.products.productsList);
   const currentPage = useAppSelector((state) => state.pagination.currentPage);
   const perProducts = useAppSelector((state) => state.pagination.perProducts);
+  const productsWrapper = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     dispatch(setProductsList(productsData));
   }, []);
 
+  React.useEffect(() => {
+    productsWrapper.current?.scrollIntoView({ behavior: "smooth" });
+  }, [currentPage]);
+
   return (
     <div className="mx-auto w-full">
-      <div className="grid grid-cols-1 min-[870px]:grid-cols-2 xl:grid-cols-3 gap-5">
-        {products.slice((currentPage - 1) * perProducts, currentPage * perProducts).map((product) => {
-          return (
-            <Product
-              key={product.id}
-              id={product.id}
-              title={product.title}
-              img={product.img}
-              typeWeight={product.typeWeight}
-              weightValue={product.weightValue}
-              description={product.description}
-              price={product.price}
-              parameters={product.parameters}
-            />
-          );
-        })}
+      <div
+        className="grid grid-cols-1 min-[870px]:grid-cols-2 xl:grid-cols-3 gap-5"
+        ref={productsWrapper}
+      >
+        {products
+          .slice((currentPage - 1) * perProducts, currentPage * perProducts)
+          .map((product) => {
+            return (
+              <Product
+                key={product.id}
+                id={product.id}
+                title={product.title}
+                img={product.img}
+                typeWeight={product.typeWeight}
+                weightValue={product.weightValue}
+                description={product.description}
+                price={product.price}
+                parameters={product.parameters}
+              />
+            );
+          })}
       </div>
       <div className="flex justify-center mt-12">
         <Pagination />
