@@ -1,15 +1,13 @@
 import React, { FC } from "react";
 import ArrowTopImg from "../../../assets/images/arrow-top.svg";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import {
-  setProductsList,
-  setProductsListFiltered,
-} from "../../../store/productsSlice";
+import { setProductsList } from "../../../store/productsSlice";
 import Delete from "../../Delete";
 import Sort from "../../Sort";
 import Categories from "./Categories/Categories";
 import Manufacturers from "./Manufacturers/Manufacturers";
 import Price from "./Price";
+import productsData from "../Products/products.json";
 
 const Parameters: FC = () => {
   const dispatch = useAppDispatch();
@@ -23,6 +21,10 @@ const Parameters: FC = () => {
   const formHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (manufacturersSelected.length === 0 && !priceBefore && !priceAfter) {
+      return dispatch(setProductsList(productsData));
+    }
+
     const filteredProducts = products.filter((product) => {
       const productPrice = Math.floor(product.price);
 
@@ -34,7 +36,7 @@ const Parameters: FC = () => {
       );
     });
 
-    dispatch(setProductsListFiltered(filteredProducts));
+    dispatch(setProductsList(filteredProducts));
   };
 
   return (

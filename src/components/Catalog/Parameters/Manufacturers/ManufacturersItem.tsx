@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { useAppSelector } from "../../../../store/hooks";
+import productsData from "../../Products/products.json";
 
 interface IManufacturersItem {
   manufacturer: string;
@@ -14,8 +15,6 @@ const ManufacturersItem: FC<IManufacturersItem> = ({
   checked,
   value,
 }) => {
-  const products = useAppSelector((state) => state.products.productsList);
-
   return (
     <div className="flex items-center gap-2 relative">
       <input
@@ -35,7 +34,7 @@ const ManufacturersItem: FC<IManufacturersItem> = ({
         <span className="text-[10px] leading-none">
           (
           {
-            products.filter(
+            productsData.filter(
               (product) => product.parameters.manufacturer === manufacturer
             ).length
           }
