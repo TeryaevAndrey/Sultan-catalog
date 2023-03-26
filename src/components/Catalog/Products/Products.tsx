@@ -19,7 +19,7 @@ const Products: FC = () => {
   }, []);
 
   return (
-    <div className="mx-auto">
+    <div className="mx-auto w-full">
       <div className="grid grid-cols-1 min-[870px]:grid-cols-2 xl:grid-cols-3 gap-5">
         {productsFiltered.length > 0
           ? productsFiltered.map((product) => {

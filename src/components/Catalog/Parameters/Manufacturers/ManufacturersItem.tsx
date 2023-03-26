@@ -12,7 +12,7 @@ const ManufacturersItem: FC<IManufacturersItem> = ({
   manufacturer,
   onChange,
   checked,
-  value
+  value,
 }) => {
   const products = useAppSelector((state) => state.products.productsList);
 

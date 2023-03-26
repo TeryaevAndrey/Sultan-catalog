@@ -7,7 +7,7 @@ export const store = configureStore({
   reducer: {
     products: productsSlice.reducer,
     catalog: catalogSlice.reducer,
-    parameters: parametersSlice.reducer
+    parameters: parametersSlice.reducer,
   },
 });
 

@@ -29,7 +29,7 @@ const Characteristics: FC<ICharacteristics> = ({
       </div>
       <div className="flex items-center gap-1 font-light text-gray-001 truncate">
         <span>Тип ухода:</span>
-        <span className="text-black-001 font-medium">
+        <span className="text-black-001 font-medium truncate">
           {typeCare.map((el, index) => {
             return `${el}${index !== typeCare.length - 1 ? "," : ""} `;
           })}

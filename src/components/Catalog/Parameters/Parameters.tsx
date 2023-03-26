@@ -8,7 +8,7 @@ import {
 import Delete from "../../Delete";
 import Sort from "../../Sort";
 import Categories from "./Categories/Categories";
-import Manufactures from "./Manufacturers/Manufactures";
+import Manufacturers from "./Manufacturers/Manufacturers";
 import Price from "./Price";
 
 const Parameters: FC = () => {
@@ -25,9 +25,10 @@ const Parameters: FC = () => {
 
     const filteredProducts = products.filter((product) => {
       const productPrice = Math.floor(product.price);
-    
+
       return (
-        (manufacturersSelected.length === 0 || manufacturersSelected.includes(product.parameters.manufacturer)) &&
+        (manufacturersSelected.length === 0 ||
+          manufacturersSelected.includes(product.parameters.manufacturer)) &&
         (!priceBefore || productPrice >= Number(priceBefore)) &&
         (!priceAfter || productPrice <= Number(priceAfter))
       );
@@ -53,7 +54,7 @@ const Parameters: FC = () => {
       <form className="mt-4 lg:mt-2.5" onSubmit={formHandler}>
         <Price />
         <div className="mt-7">
-          <Manufactures />
+          <Manufacturers />
         </div>
         <div className="mt-3.5 flex items-center gap-3">
           <button

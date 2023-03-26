@@ -8,7 +8,7 @@ import {
 } from "../../../../store/parametersSlice";
 import ManufacturersItem from "./ManufacturersItem";
 
-const Manufactures: FC = () => {
+const Manufacturers: FC = () => {
   const dispatch = useAppDispatch();
   const products = useAppSelector((state) => state.products.productsList);
   const searchValue = useAppSelector((state) => state.parameters.searchValue);
@@ -44,7 +44,7 @@ const Manufactures: FC = () => {
   };
 
   const showAll = () => {
-    setIsAll(true);
+    setIsAll(!isAll);
   };
 
   const changeCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -97,7 +97,7 @@ const Manufactures: FC = () => {
             })}
 
         {isAll &&
-          manufacturers.slice(3).map((manufacturer, index) => {
+          manufacturers.slice(4).map((manufacturer, index) => {
             return (
               <ManufacturersItem
                 onChange={changeCheckbox}
@@ -115,7 +115,11 @@ const Manufactures: FC = () => {
             onClick={showAll}
           >
             <span>Показать все</span>
-            <img src={SortArrowImg} alt="open" />
+            <img
+              className={`${isAll && "rotate-180"}`}
+              src={SortArrowImg}
+              alt="open"
+            />
           </div>
         )}
       </div>
@@ -123,4 +127,4 @@ const Manufactures: FC = () => {
   );
 };
 
-export default Manufactures;
+export default Manufacturers;

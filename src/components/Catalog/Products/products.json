@@ -28,5 +28,215 @@
       "brand": "ARIEL",
       "typeCare": ["Уход за одеждой"]
     }
+  },
+  {
+    "id": 3,
+    "img": "https://static.selvis.com/web/images/1b1112a8-bab9-479c-a85f-ee71ef5ea12d.png?large",
+    "title": "ARIEL автомат гель",
+    "typeWeight": "weight",
+    "weightValue": 1500,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 90.54,
+    "parameters": {
+      "hatch": 333333333,
+      "manufacturer": "CleanWave",
+      "brand": "ARIEL",
+      "typeCare": ["Уход за одеждой"]
+    }
+  },
+  {
+    "id": 4,
+    "img": "https://marislavna.ru/upload/shop_1/8/4/6/item_8463/item_8463.png",
+    "title": "Мариславна жидкое мыло",
+    "typeWeight": "volume",
+    "weightValue": 400,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 5,
+    "parameters": {
+      "hatch": 444444444,
+      "manufacturer": "AquaWash",
+      "brand": "Мариславна",
+      "typeCare": ["Уход за руками"]
+    }
+  },
+  {
+    "id": 5,
+    "img": "https://main-cdn.sbermegamarket.ru/big1/hlr-system/158/761/800/084/188/100026778986b0.png",
+    "title": "Мариславна жидкое мыло",
+    "typeWeight": "volume",
+    "weightValue": 450,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 4.6,
+    "parameters": {
+      "hatch": 555555555,
+      "manufacturer": "AquaWash",
+      "brand": "Absolute",
+      "typeCare": ["Уход за руками"]
+    }
+  },
+  {
+    "id": 6,
+    "img": "https://spbtovar.ru/wa-data/public/shop/products/85/22/72285/images/73597/73597.345x0.PNG",
+    "title": "Мариславна жидкое мыло",
+    "typeWeight": "volume",
+    "weightValue": 550,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 5,
+    "parameters": {
+      "hatch": 666666666,
+      "manufacturer": "PowerClean",
+      "brand": "Весна",
+      "typeCare": ["Уход за руками"]
+    }
+  },
+  {
+    "id": 7,
+    "img": "https://imgpng.ru/d/shampoo_PNG40.png",
+    "title": "Palmolive шампунь",
+    "typeWeight": "volume",
+    "weightValue": 550,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 40.34,
+    "parameters": {
+      "hatch": 777777777,
+      "manufacturer": "DeepCleanse",
+      "brand": "Palmolive",
+      "typeCare": ["Уход за волосами"]
+    }
+  },
+  {
+    "id": 8,
+    "img": "https://baris-online.ru/upload/iblock/629/629047874c3bab2a4341eedb6a06b0a4.jpg",
+    "title": "Shauma шампунь мужской",
+    "typeWeight": "volume",
+    "weightValue": 550,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 30,
+    "parameters": {
+      "hatch": 888888888,
+      "manufacturer": "DeepCleanse",
+      "brand": "Shauma",
+      "typeCare": ["Уход за волосами"]
+    }
+  },
+  {
+    "id": 9,
+    "img": "https://w7.pngwing.com/pngs/133/550/png-transparent-nivea-shower-gel-cream-personal-care-shower-gel-cream-cosmetics-gel.png",
+    "title": "NIVEA-MEN-Active-clean средство для мытья посуды Crystal",
+    "typeWeight": "volume",
+    "weightValue": 400,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 60.12,
+    "parameters": {
+      "hatch": 999999999,
+      "manufacturer": "NIVEA-MEN",
+      "brand": "NIVEA-MEN",
+      "typeCare": ["Уход за телом", "Уход за волосами"]
+    }
+  },
+  {
+    "id": 10,
+    "img": "https://roscontrol.com/wp-content/uploads/2021/09/683441151c0b8d26eefd.jpg",
+    "title": "Tide стиральный порошок",
+    "typeWeight": "weight",
+    "weightValue": 450,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 80.263,
+    "parameters": {
+      "hatch": 101010101,
+      "manufacturer": "Tide",
+      "brand": "Tide",
+      "typeCare": ["Уход за одеждой"]
+    }
+  },
+  {
+    "id": 11,
+    "img": "https://imgpng.ru/d/washing_powder_PNG34.png",
+    "title": "LOSK автомат гель",
+    "typeWeight": "weight",
+    "weightValue": 1500,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 90.54,
+    "parameters": {
+      "hatch": 333333333,
+      "manufacturer": "CleanWave",
+      "brand": "LOSK",
+      "typeCare": ["Уход за одеждой"]
+    }
+  },
+  {
+    "id": 12,
+    "img": "https://marislavna.ru/upload/shop_1/8/4/6/item_8463/item_8463.png",
+    "title": "Мариславна жидкое мыло",
+    "typeWeight": "volume",
+    "weightValue": 400,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 5,
+    "parameters": {
+      "hatch": 444444444,
+      "manufacturer": "AquaWash",
+      "brand": "Мариславна",
+      "typeCare": ["Уход за руками"]
+    }
+  },
+  {
+    "id": 13,
+    "img": "https://main-cdn.sbermegamarket.ru/big1/hlr-system/158/761/800/084/188/100026778986b0.png",
+    "title": "Мариславна жидкое мыло",
+    "typeWeight": "volume",
+    "weightValue": 450,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 4.6,
+    "parameters": {
+      "hatch": 555555555,
+      "manufacturer": "AquaWash",
+      "brand": "Absolute",
+      "typeCare": ["Уход за руками"]
+    }
+  },
+  {
+    "id": 14,
+    "img": "https://spbtovar.ru/wa-data/public/shop/products/85/22/72285/images/73597/73597.345x0.PNG",
+    "title": "Мариславна жидкое мыло",
+    "typeWeight": "volume",
+    "weightValue": 550,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 5,
+    "parameters": {
+      "hatch": 666666666,
+      "manufacturer": "PowerClean",
+      "brand": "Весна",
+      "typeCare": ["Уход за руками"]
+    }
+  },
+  {
+    "id": 15,
+    "img": "https://imgpng.ru/d/shampoo_PNG40.png",
+    "title": "Palmolive шампунь",
+    "typeWeight": "volume",
+    "weightValue": 550,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 40.34,
+    "parameters": {
+      "hatch": 777777777,
+      "manufacturer": "DeepCleanse",
+      "brand": "Palmolive",
+      "typeCare": ["Уход за волосами"]
+    }
+  },
+  {
+    "id": 16,
+    "img": "https://baris-online.ru/upload/iblock/629/629047874c3bab2a4341eedb6a06b0a4.jpg",
+    "title": "Shauma шампунь мужской",
+    "typeWeight": "volume",
+    "weightValue": 550,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 30,
+    "parameters": {
+      "hatch": 888888888,
+      "manufacturer": "DeepCleanse",
+      "brand": "Shauma",
+      "typeCare": ["Уход за руками"]
+    }
   }
 ]
