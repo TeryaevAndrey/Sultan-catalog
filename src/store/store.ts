@@ -1,3 +1,4 @@
+import { paginationSlice } from "./paginationSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import { catalogSlice } from "./catalogSlice";
 import { parametersSlice } from "./parametersSlice";
@@ -8,6 +9,7 @@ export const store = configureStore({
     products: productsSlice.reducer,
     catalog: catalogSlice.reducer,
     parameters: parametersSlice.reducer,
+    pagination: paginationSlice.reducer,
   },
 });
 
