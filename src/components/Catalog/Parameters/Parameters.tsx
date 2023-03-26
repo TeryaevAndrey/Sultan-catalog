@@ -1,13 +1,15 @@
 import React, { FC } from "react";
 import ArrowTopImg from "../../../assets/images/arrow-top.svg";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import { setProductsList, setProductsListFiltered } from "../../../store/productsSlice";
+import {
+  setProductsList,
+  setProductsListFiltered,
+} from "../../../store/productsSlice";
 import Delete from "../../Delete";
 import Sort from "../../Sort";
 import Categories from "./Categories/Categories";
 import Manufactures from "./Manufacturers/Manufactures";
 import Price from "./Price";
-import productsData from "../../Catalog/Products/products.json";
 
 const Parameters: FC = () => {
   const dispatch = useAppDispatch();
@@ -22,24 +24,13 @@ const Parameters: FC = () => {
     e.preventDefault();
 
     const filteredProducts = products.filter((product) => {
-      const productPrice = Math.round(product.price);
-
-      if (priceBefore && priceAfter) {
-        return (
-          productPrice >= Number(priceBefore) &&
-          productPrice <= Number(priceAfter)
-        );
-      }
-
-      if (priceBefore) {
-        return productPrice >= Number(priceBefore);
-      }
-
-      if (priceAfter) {
-        return productPrice <= Number(priceAfter);
-      }
-
-      return true;
+      const productPrice = Math.floor(product.price);
+    
+      return (
+        (manufacturersSelected.length === 0 || manufacturersSelected.includes(product.parameters.manufacturer)) &&
+        (!priceBefore || productPrice >= Number(priceBefore)) &&
+        (!priceAfter || productPrice <= Number(priceAfter))
+      );
     });
 
     dispatch(setProductsListFiltered(filteredProducts));
