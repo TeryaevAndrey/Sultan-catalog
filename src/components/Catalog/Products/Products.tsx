@@ -10,6 +10,8 @@ const Products: FC = () => {
   const products: IProduct[] =
     JSON.parse(localStorage.getItem("products")!) ||
     useAppSelector((state) => state.products.productsList);
+  const currentPage = useAppSelector((state) => state.pagination.currentPage);
+  const perProducts = useAppSelector((state) => state.pagination.perProducts);
 
   React.useEffect(() => {
     dispatch(setProductsList(productsData));
@@ -18,7 +20,7 @@ const Products: FC = () => {
   return (
     <div className="mx-auto w-full">
       <div className="grid grid-cols-1 min-[870px]:grid-cols-2 xl:grid-cols-3 gap-5">
-        {products.map((product) => {
+        {products.slice((currentPage - 1) * perProducts, currentPage * perProducts).map((product) => {
           return (
             <Product
               key={product.id}

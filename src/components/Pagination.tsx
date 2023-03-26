@@ -11,9 +11,10 @@ const Pagination: FC = () => {
   const totalPages = useAppSelector((state) => state.pagination.totalPages);
   const currentPage = useAppSelector((state) => state.pagination.currentPage);
   const pages: number[] = [];
+  const perProducts = useAppSelector((state) => state.pagination.perProducts);
 
   React.useEffect(() => {
-    dispatch(setTotalPages(Math.ceil(products.length / 9)));
+    dispatch(setTotalPages(Math.ceil(products.length / perProducts)));
   }, [products]);
 
   for (let i = 1; i <= totalPages; i++) {
@@ -24,24 +25,34 @@ const Pagination: FC = () => {
     dispatch(setCurrentPage(page));
   };
 
+  const prevPage = () => {
+    dispatch(setCurrentPage(currentPage - 1));
+  }
+
+  const nextPage = () => {
+    dispatch(setCurrentPage(currentPage + 1));
+  }
+
   return (
     <div className="flex items-center gap-8">
       <img
         className="w-[9px] h-[16px] cursor-pointer"
         src={PrevImg}
         alt="prev"
+        onClick={prevPage}
       />
       <div className="flex items-center text-gray-001">
-        {pages.map((page) => {
+        {pages.map((page, index) => {
           return (
             <Link
+              key={index}
               className={`font-medium w-[35px] h-[35px] rounded-full ${
                 currentPage === page ? "bg-orange-001/[0.3]" : "bg-white"
               } flex items-center justify-center`}
               to="/"
               onClick={() => changeCurrentPage(page)}
             >
-              {page}
+              {page % 5 === 0 ? page++ : page}
             </Link>
           );
         })}
@@ -50,6 +61,7 @@ const Pagination: FC = () => {
         className="w-[9px] h-[16px] cursor-pointer"
         src={NextImg}
         alt="next"
+        onClick={nextPage}
       />
     </div>
   );

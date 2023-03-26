@@ -3,9 +3,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const initialState: {
   currentPage: number;
   totalPages: number;
+  perProducts: number;
 } = {
   currentPage: 1,
   totalPages: 1,
+  perProducts: 9
 };
 
 export const paginationSlice = createSlice({
