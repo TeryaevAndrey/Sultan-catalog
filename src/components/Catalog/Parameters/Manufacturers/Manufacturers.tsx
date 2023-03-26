@@ -7,7 +7,7 @@ import {
   setManufacturersSelected,
 } from "../../../../store/parametersSlice";
 import ManufacturersItem from "./ManufacturersItem";
-import productData from "../../Products/products.json";
+import productsData from "../../Products/products.json";
 
 const Manufacturers: FC = () => {
   const dispatch = useAppDispatch();
@@ -19,7 +19,7 @@ const Manufacturers: FC = () => {
     string[]
   >([]);
   const manufacturers = Array.from(
-    new Set(productData.map((product) => product.parameters.manufacturer))
+    new Set(productsData.map((product) => product.parameters.manufacturer))
   );
   const [isAll, setIsAll] = React.useState<boolean>(false);
 

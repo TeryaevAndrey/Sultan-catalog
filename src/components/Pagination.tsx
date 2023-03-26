@@ -27,11 +27,11 @@ const Pagination: FC = () => {
 
   const prevPage = () => {
     dispatch(setCurrentPage(currentPage - 1));
-  }
+  };
 
   const nextPage = () => {
     dispatch(setCurrentPage(currentPage + 1));
-  }
+  };
 
   return (
     <div className="flex items-center gap-8">

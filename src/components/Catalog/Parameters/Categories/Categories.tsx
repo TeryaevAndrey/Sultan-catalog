@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { Link } from "react-router-dom";
 
 const Categories: FC<ICategories> = ({ categories }) => {
   return (
@@ -7,7 +6,7 @@ const Categories: FC<ICategories> = ({ categories }) => {
       {categories.map((el, index) => {
         return (
           <li key={index}>
-            <Link to={el.to}>{el.title}</Link>
+            <button>{el}</button>
           </li>
         );
       })}

@@ -17,6 +17,7 @@ const Parameters: FC = () => {
     (state) => state.parameters.manufacturersSelected
   );
   const products = useAppSelector((state) => state.products.productsList);
+  const categories = useAppSelector((state) => state.categories.categoriesList);
 
   const formHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -68,12 +69,7 @@ const Parameters: FC = () => {
           <Delete />
         </div>
       </form>
-      <Categories
-        categories={[
-          { title: "Уход за телом", to: "/" },
-          { title: "Уход за руками", to: "/" },
-        ]}
-      />
+      <Categories categories={categories} />
       <div className="lg:hidden mt-6">
         <Sort />
       </div>

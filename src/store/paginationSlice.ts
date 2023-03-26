@@ -7,7 +7,7 @@ const initialState: {
 } = {
   currentPage: 1,
   totalPages: 1,
-  perProducts: 9
+  perProducts: 9,
 };
 
 export const paginationSlice = createSlice({

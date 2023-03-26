@@ -7,8 +7,24 @@ import Tabs from "../components/Catalog/Tabs/Tabs";
 import Crumbs from "../components/Crumbs";
 import Sort from "../components/Sort";
 import Title from "../components/Title";
+import productsData from "../components/Catalog/Products/products.json";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { setCategories } from "../store/categoriesSlice";
 
 const CatalogPage: FC = () => {
+  const dispatch = useAppDispatch();
+  const categories = useAppSelector((state) => state.categories.categoriesList);
+
+  React.useEffect(() => {
+    const categories: string[] = [];
+
+    productsData.forEach((product) => {
+      categories.push(...product.parameters.typeCare);
+    });
+
+    dispatch(setCategories(Array.from(new Set(categories))));
+  }, []);
+
   return (
     <section>
       <Tabs />
@@ -21,17 +37,7 @@ const CatalogPage: FC = () => {
           </div>
         </div>
         <div className="mt-5">
-          <CategoriesSlider
-            categories={[
-              { title: "Уход за телом", to: "/" },
-              { title: "Уход за руками", to: "/" },
-              { title: "Уход за телом", to: "/" },
-              { title: "Уход за руками", to: "/" },
-              { title: "Уход за телом", to: "/" },
-              { title: "Уход за руками", to: "/" },
-              { title: "Уход за телом", to: "/" },
-            ]}
-          />
+          <CategoriesSlider categories={categories} />
         </div>
         <div className="flex items-start justify-between flex-wrap md:flex-nowrap pb-12 lg:pb-24 gap-12 lg:gap-24 mt-5">
           <Parameters />
