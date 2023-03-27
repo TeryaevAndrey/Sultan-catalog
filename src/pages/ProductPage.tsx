@@ -31,7 +31,7 @@ const ProductPage: FC = () => {
             <img
               className="w-full object-contain max-h-[471px]"
               src={product.img}
-              alt="produc"
+              alt="product"
             />
           </div>
           <div className="flex flex-col w-full lg:w-[50%]">
