@@ -47,11 +47,9 @@ const Products: FC = () => {
             );
           })}
       </div>
-      {totalPages > 1 && (
-        <div className="flex justify-center mt-12">
+        <div className={`${totalPages > 1 ? "flex" : "hidden"} justify-center mt-12`}>
           <Pagination />
         </div>
-      )}
     </div>
   );
 };
