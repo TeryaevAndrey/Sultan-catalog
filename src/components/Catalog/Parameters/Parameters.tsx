@@ -8,6 +8,7 @@ import Categories from "./Categories/Categories";
 import Manufacturers from "./Manufacturers/Manufacturers";
 import Price from "./Price";
 import productsData from "../Products/products.json";
+import { setCurrentPage } from "../../../store/paginationSlice";
 
 const Parameters: FC = () => {
   const dispatch = useAppDispatch();
@@ -36,6 +37,8 @@ const Parameters: FC = () => {
         (!priceAfter || productPrice <= Number(priceAfter))
       );
     });
+
+    dispatch(setCurrentPage(1));
 
     dispatch(setProductsList(filteredProducts));
   };

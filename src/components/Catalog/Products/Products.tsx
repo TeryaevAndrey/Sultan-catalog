@@ -12,6 +12,7 @@ const Products: FC = () => {
     useAppSelector((state) => state.products.productsList);
   const currentPage = useAppSelector((state) => state.pagination.currentPage);
   const perProducts = useAppSelector((state) => state.pagination.perProducts);
+  const totalPages = useAppSelector((state) => state.pagination.totalPages);
   const productsWrapper = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -46,9 +47,11 @@ const Products: FC = () => {
             );
           })}
       </div>
-      <div className="flex justify-center mt-12">
-        <Pagination />
-      </div>
+      {totalPages > 1 && (
+        <div className="flex justify-center mt-12">
+          <Pagination />
+        </div>
+      )}
     </div>
   );
 };

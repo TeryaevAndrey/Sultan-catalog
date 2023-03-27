@@ -5,7 +5,10 @@ const Categories: FC<ICategories> = ({ categories }) => {
     <ul className="text-gray-001 mt-3.5">
       {categories.map((el, index) => {
         return (
-          <li key={index}>
+          <li
+            className="hover:text-black-001 ease-linear duration-75"
+            key={index}
+          >
             <button>{el}</button>
           </li>
         );
