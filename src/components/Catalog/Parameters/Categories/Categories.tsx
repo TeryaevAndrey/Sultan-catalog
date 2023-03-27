@@ -1,23 +1,33 @@
 import React, { FC } from "react";
-import { setCurrentCategory } from "../../../../store/categoriesSlice";
+import { setCategoriesSelected } from "../../../../store/categoriesSlice";
 import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
 
 const Categories: FC<ICategories> = ({ categories }) => {
   const dispatch = useAppDispatch();
-  const currentCategory = useAppSelector(
-    (state) => state.categories.currentCategory
+  const categoriesSelected = useAppSelector(
+    (state) => state.categories.categoriesSelected
   );
+
+  console.log(categoriesSelected);
 
   return (
     <ul className="text-gray-001 mt-3.5">
       {categories.map((el, index) => {
         return (
           <li
-            className={`hover:text-black-001 ${currentCategory === index ? "text-black-001" : "text-gray-001"} ease-linear duration-75`}
+            className={`hover:text-black-001 ${
+              categoriesSelected.includes(el)
+                ? "text-black-001"
+                : "text-gray-001"
+            } ease-linear duration-75 cursor-pointer`}
             key={index}
-            onClick={() => {
-              dispatch(setCurrentCategory(index))
-            }}
+            onClick={() =>
+              dispatch(
+                setCategoriesSelected(
+                  Array.from(new Set([...categoriesSelected, el]))
+                )
+              )
+            }
           >
             {el}
           </li>

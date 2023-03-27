@@ -2,10 +2,10 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: {
   categoriesList: string[];
-  currentCategory: number | undefined;
+  categoriesSelected: string[];
 } = {
   categoriesList: [],
-  currentCategory: undefined,
+  categoriesSelected: [],
 };
 
 export const categoriesSlice = createSlice({
@@ -16,10 +16,10 @@ export const categoriesSlice = createSlice({
       state.categoriesList = action.payload;
     },
 
-    setCurrentCategory: (state, action: PayloadAction<number>) => {
-      state.currentCategory = action.payload;
-    }
+    setCategoriesSelected: (state, action: PayloadAction<string[]>) => {
+      state.categoriesSelected = action.payload;
+    },
   },
 });
 
-export const { setCategories, setCurrentCategory } = categoriesSlice.actions;
+export const { setCategories, setCategoriesSelected } = categoriesSlice.actions;
