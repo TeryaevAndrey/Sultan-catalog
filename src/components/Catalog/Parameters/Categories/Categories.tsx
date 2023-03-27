@@ -21,13 +21,21 @@ const Categories: FC<ICategories> = ({ categories }) => {
                 : "text-gray-001"
             } ease-linear duration-75 cursor-pointer`}
             key={index}
-            onClick={() =>
-              dispatch(
-                setCategoriesSelected(
-                  Array.from(new Set([...categoriesSelected, el]))
-                )
-              )
-            }
+            onClick={() => {
+              if (categoriesSelected.includes(el)) {
+                dispatch(
+                  setCategoriesSelected(
+                    categoriesSelected.filter((category) => category !== el)
+                  )
+                );
+              } else {
+                dispatch(
+                  setCategoriesSelected(
+                    Array.from(new Set([...categoriesSelected, el]))
+                  )
+                );
+              }
+            }}
           >
             {el}
           </li>

@@ -15,18 +15,26 @@ const CategoriesSlider: FC<ICategories> = ({ categories }) => {
           return (
             <button
               key={index}
-              className={`px-6 py-[18px] bg-white ${
+              className={`px-6 py-[18px] ${
                 categoriesSelected.includes(el)
                   ? "bg-[rgba(0,0,0,0.05)]"
                   : "bg-white"
-              } hover:bg-[rgba(0,0,0,0.05)] ease-linear duration-75 text-gray-001 text-center rounded-[10px] shadow-[0px_15px_70px_-11px_rgba(43,28,1,0.04)] min-w-[100px]`}
-              onClick={() =>
-                dispatch(
-                  setCategoriesSelected(
-                    Array.from(new Set([...categoriesSelected, el]))
-                  )
-                )
-              }
+              } ease-linear duration-75 text-gray-001 text-center rounded-[10px] shadow-[0px_15px_70px_-11px_rgba(43,28,1,0.04)] min-w-[100px]`}
+              onClick={() => {
+                if (categoriesSelected.includes(el)) {
+                  dispatch(
+                    setCategoriesSelected(
+                      categoriesSelected.filter((category) => category !== el)
+                    )
+                  );
+                } else {
+                  dispatch(
+                    setCategoriesSelected(
+                      Array.from(new Set([...categoriesSelected, el]))
+                    )
+                  );
+                }
+              }}
             >
               {el}
             </button>
