@@ -9,6 +9,12 @@ import Manufacturers from "./Manufacturers/Manufacturers";
 import Price from "./Price";
 import productsData from "../Products/products.json";
 import { setCurrentPage } from "../../../store/paginationSlice";
+import {
+  setPriceBefore,
+  setPriceAfter,
+  setSearchValue,
+  setManufacturersSelected,
+} from "../../../store/parametersSlice";
 
 const Parameters: FC = () => {
   const dispatch = useAppDispatch();
@@ -43,6 +49,17 @@ const Parameters: FC = () => {
     dispatch(setProductsList(filteredProducts));
   };
 
+  const clearParameters = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    dispatch(setPriceBefore(""));
+    dispatch(setPriceAfter(""));
+    dispatch(setSearchValue(""));
+    dispatch(setManufacturersSelected([]));
+
+    return dispatch(setProductsList(productsData));
+  };
+
   return (
     <div className="flex flex-col w-full md:max-w-[240px]">
       <div className="flex items-center justify-between">
@@ -69,7 +86,7 @@ const Parameters: FC = () => {
           >
             Показать
           </button>
-          <Delete />
+          <Delete onClick={clearParameters} />
         </div>
       </form>
       <Categories categories={categories} />
