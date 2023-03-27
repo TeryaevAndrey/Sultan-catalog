@@ -1,9 +1,21 @@
-import React from "react";
+import React, { FC } from "react";
 
-const ToCartBtn = () => {
+interface IToCartBtn {
+  onClick: React.MouseEventHandler;
+  inCart: boolean;
+}
+
+const ToCartBtn: FC<IToCartBtn> = ({ onClick, inCart }) => {
+  const productsCart = JSON.parse(localStorage.getItem("productsCart") || "[]");
+
   return (
-    <button className="bg-orange-001 rounded-[80px] py-4 px-6 flex justify-center items-center gap-1 uppercase text-[10px] font-bold max-h-[45px]">
-      В корзину
+    <button
+      onClick={onClick}
+      className={`${
+        inCart ? "bg-green-400" : "bg-orange-001"
+      } rounded-[80px] py-4 px-6 flex justify-center items-center gap-1 uppercase text-[10px] font-bold max-h-[45px]`}
+    >
+      {inCart ? "В корзине" : "В корзину"}
       <svg
         width="25"
         height="25"

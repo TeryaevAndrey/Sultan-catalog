@@ -28,6 +28,9 @@ const Parameters: FC = () => {
   const categoriesSelected = useAppSelector(
     (state) => state.categories.categoriesSelected
   );
+  const [isOpenParameters, setIsOpenParameters] = React.useState<boolean>(
+    window.screen.width < 768 ? false : true
+  );
 
   const formHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -96,13 +99,19 @@ const Parameters: FC = () => {
         </h3>
         <button className="flex justify-center items-center w-8 h-8 bg-orange-001/[0.5] rounded-full lg:hidden">
           <img
-            className="w-[10px] h-[8px] rotate-180"
+            className={`w-[10px] h-[8px] ${
+              isOpenParameters ? "" : "rotate-180"
+            }`}
             src={ArrowTopImg}
             alt="open"
+            onClick={() => setIsOpenParameters(!isOpenParameters)}
           />
         </button>
       </div>
-      <form className="mt-4 lg:mt-2.5" onSubmit={formHandler}>
+      <form
+        className={`mt-4 lg:mt-2.5 ${isOpenParameters ? "block" : "hidden"}`}
+        onSubmit={formHandler}
+      >
         <Price />
         <div className="mt-7">
           <Manufacturers />
