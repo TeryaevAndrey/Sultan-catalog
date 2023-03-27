@@ -25,6 +25,9 @@ const Parameters: FC = () => {
   );
   const products = useAppSelector((state) => state.products.productsList);
   const categories = useAppSelector((state) => state.categories.categoriesList);
+  const categoriesSelected = useAppSelector(
+    (state) => state.categories.categoriesSelected
+  );
 
   const formHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,20 +36,45 @@ const Parameters: FC = () => {
       return dispatch(setProductsList(productsData));
     }
 
-    const filteredProducts = products.filter((product) => {
-      const productPrice = Math.floor(product.price);
+    if (categoriesSelected.length > 0) {
+      const filteredProductsByCategories = productsData.filter((product) => {
+        return product.parameters.typeCare.some((item) =>
+          categoriesSelected.includes(item)
+        );
+      });
 
-      return (
-        (manufacturersSelected.length === 0 ||
-          manufacturersSelected.includes(product.parameters.manufacturer)) &&
-        (!priceBefore || productPrice >= Number(priceBefore)) &&
-        (!priceAfter || productPrice <= Number(priceAfter))
+      const filteredProducts = filteredProductsByCategories.filter(
+        (product) => {
+          const productPrice = Math.floor(product.price);
+
+          return (
+            (manufacturersSelected.length === 0 ||
+              manufacturersSelected.includes(
+                product.parameters.manufacturer
+              )) &&
+            (!priceBefore || productPrice >= Number(priceBefore)) &&
+            (!priceAfter || productPrice <= Number(priceAfter))
+          );
+        }
       );
-    });
+
+      dispatch(setProductsList(filteredProducts));
+    } else {
+      const filteredProducts = productsData.filter((product) => {
+        const productPrice = Math.floor(product.price);
+
+        return (
+          (manufacturersSelected.length === 0 ||
+            manufacturersSelected.includes(product.parameters.manufacturer)) &&
+          (!priceBefore || productPrice >= Number(priceBefore)) &&
+          (!priceAfter || productPrice <= Number(priceAfter))
+        );
+      });
+
+      dispatch(setProductsList(filteredProducts));
+    }
 
     dispatch(setCurrentPage(1));
-
-    dispatch(setProductsList(filteredProducts));
   };
 
   const clearParameters = (e: React.MouseEvent<HTMLButtonElement>) => {

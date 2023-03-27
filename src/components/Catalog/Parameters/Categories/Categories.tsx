@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import { setCategoriesSelected } from "../../../../store/categoriesSlice";
 import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import { setProductsList } from "../../../../store/productsSlice";
+import productsData from "../../Products/products.json";
 
 const Categories: FC<ICategories> = ({ categories }) => {
   const dispatch = useAppDispatch();

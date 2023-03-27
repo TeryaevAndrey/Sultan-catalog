@@ -9,10 +9,19 @@ import Title from "../components/Title";
 import productsData from "../components/Catalog/Products/products.json";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { setCategories } from "../store/categoriesSlice";
+import { setProductsList } from "../store/productsSlice";
 
 const CatalogPage: FC = () => {
   const dispatch = useAppDispatch();
   const categories = useAppSelector((state) => state.categories.categoriesList);
+  const categoriesSelected = useAppSelector(
+    (state) => state.categories.categoriesSelected
+  );
+  const priceBefore = useAppSelector((state) => state.parameters.priceBefore);
+  const priceAfter = useAppSelector((state) => state.parameters.priceAfter);
+  const manufacturersSelected = useAppSelector(
+    (state) => state.parameters.manufacturersSelected
+  );
 
   React.useEffect(() => {
     const categories: string[] = [];
@@ -23,6 +32,46 @@ const CatalogPage: FC = () => {
 
     dispatch(setCategories(Array.from(new Set(categories))));
   }, []);
+
+  React.useEffect(() => {
+    if (categoriesSelected.length === 0) {
+      const filteredProducts = productsData.filter((product) => {
+        const productPrice = Math.floor(product.price);
+
+        return (
+          (manufacturersSelected.length === 0 ||
+            manufacturersSelected.includes(product.parameters.manufacturer)) &&
+          (!priceBefore || productPrice >= Number(priceBefore)) &&
+          (!priceAfter || productPrice <= Number(priceAfter))
+        );
+      });
+
+      dispatch(setProductsList(filteredProducts));
+    } else {
+      const filteredProductsByCategories = productsData.filter((product) => {
+        return product.parameters.typeCare.some((item) =>
+          categoriesSelected.includes(item)
+        );
+      });
+
+      const filteredProducts = filteredProductsByCategories.filter(
+        (product) => {
+          const productPrice = Math.floor(product.price);
+
+          return (
+            (manufacturersSelected.length === 0 ||
+              manufacturersSelected.includes(
+                product.parameters.manufacturer
+              )) &&
+            (!priceBefore || productPrice >= Number(priceBefore)) &&
+            (!priceAfter || productPrice <= Number(priceAfter))
+          );
+        }
+      );
+
+      dispatch(setProductsList(filteredProducts));
+    }
+  }, [categoriesSelected]);
 
   return (
     <section>
