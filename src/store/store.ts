@@ -4,6 +4,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { catalogSlice } from "./catalogSlice";
 import { parametersSlice } from "./parametersSlice";
 import { productsSlice } from "./productsSlice";
+import { cartSlice } from "./cartSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     parameters: parametersSlice.reducer,
     pagination: paginationSlice.reducer,
     categories: categoriesSlice.reducer,
+    cart: cartSlice.reducer
   },
 });
 
