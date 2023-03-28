@@ -6,7 +6,7 @@ import Delete from "../Delete";
 import Counter from "../Counter";
 import Weight from "../Product/Weight";
 
-const CartProduct: FC<IProduct> = ({
+const CartProduct: FC<any> = ({
   id,
   img,
   title,
@@ -15,77 +15,37 @@ const CartProduct: FC<IProduct> = ({
   weightValue,
   price,
   parameters,
+  deleteProduct,
 }) => {
-  const productsCart = useAppSelector((state) => state.cart.productsCart);
   const dispatch = useAppDispatch();
+  const productsCart = useAppSelector((state) => state.cart.productsCart);
   const [amount, setAmount] = React.useState<number>(1);
   const [priceValue, setPriceValue] = React.useState<number>(price);
 
-  const deleteProduct = () => {
-    localStorage.setItem(
-      "productsCart",
-      JSON.stringify(
-        productsCart.filter((product: IProduct) => {
-          return product.id !== id;
-        })
-      )
-    );
-
-    dispatch(
-      setProductsCart(
-        productsCart.filter((product: IProduct) => {
-          return product.id !== id;
-        })
-      )
-    );
-  };
-
   const reduceAmount = () => {
-    if (amount <= 0) {
+    if(amount <= 0) {
       return;
     }
 
     setAmount((prev) => prev - 1);
-
-    productsCart.map((product) => {
-      if (product.id === id) {
-        return { ...product, amount };
-      }
-    });
-  };
+  }
 
   const increaseAmount = () => {
     setAmount((prev) => prev + 1);
-
-    productsCart.map((product) => {
-      if (product.id === id) {
-        return { ...product, amount };
-      }
-    });
-  };
+  }
 
   const changeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(Number(e.target.value));
-  };
+  }
+
+  React.useEffect(() => {
+    setPriceValue((prev) => prev - price);
+  }, [reduceAmount]);
 
   React.useEffect(() => {
     setPriceValue(price * amount);
-  }, [amount]);
-
-  React.useEffect(() => {
-    dispatch(
-      setProductsCart(
-        productsCart.map((product: any) => {
-          if (productsCart.length > 0) {
-            if (product.id === id) {
-              return { ...product, price: priceValue };
-            }
-          }
-        })
-      )
-    );
-  }, [priceValue]);
-
+  }, [increaseAmount]);
+  
   return (
     <div className="py-5 flex flex-col xl:flex-row xl:items-center xl:justify-between w-full border-t border-gray-001/[0.3] border-dotted flex-wrap last:border-b">
       <img

@@ -5,6 +5,20 @@ import CartProduct from "./CartProduct";
 
 const CartProducts: FC = () => {
   const productsCart = useAppSelector((state) => state.cart.productsCart);
+  const dispatch = useAppDispatch();
+
+  const deleteProduct = (id: number) => {
+    localStorage.setItem(
+      "productsCart",
+      JSON.stringify(productsCart.filter((product) => product.id !== id))
+    );
+
+    dispatch(
+      setProductsCart(productsCart.filter((product) => product.id !== id))
+    );
+  };
+
+  console.log(productsCart);
 
   return (
     <div className="w-full flex flex-col">
@@ -21,6 +35,7 @@ const CartProducts: FC = () => {
               typeWeight={product.typeWeight}
               weightValue={product.weightValue}
               price={product.price}
+              deleteProduct={() => deleteProduct(product.id)}
             />
           );
         })
