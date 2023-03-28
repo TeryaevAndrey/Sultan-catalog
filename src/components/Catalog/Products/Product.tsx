@@ -76,6 +76,7 @@ const Product: FC<IProduct> = ({
             weightValue,
             price,
             parameters,
+            amount: 1,
           },
         ])
       );

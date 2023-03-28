@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: {
-  productsCart: IProduct[] | [];
+  productsCart: any[] | [];
 } = {
   productsCart: [],
 };
@@ -10,7 +10,7 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    setProductsCart: (state, action: PayloadAction<IProduct[] | []>) => {
+    setProductsCart: (state, action: PayloadAction<any[] | []>) => {
       state.productsCart = action.payload;
     },
   },

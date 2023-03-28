@@ -7,10 +7,18 @@ interface ICounter {
   amount: number;
 }
 
-const Counter: FC<ICounter> = ({reduceAmount, increaseAmount, onChange, amount}) => {
+const Counter: FC<ICounter> = ({
+  reduceAmount,
+  increaseAmount,
+  onChange,
+  amount,
+}) => {
   return (
     <div className="flex items-center">
-      <button onClick={reduceAmount} className="w-[34px] h-[23px] rounded-full bg-orange-001/[0.3] text-gray-001 flex justify-center items-center">
+      <button
+        onClick={reduceAmount}
+        className="w-[34px] h-[23px] rounded-full bg-orange-001/[0.3] text-gray-001 flex justify-center items-center"
+      >
         -
       </button>
       <input
@@ -20,7 +28,10 @@ const Counter: FC<ICounter> = ({reduceAmount, increaseAmount, onChange, amount})
         value={amount}
         onChange={onChange}
       />
-      <button onClick={increaseAmount} className="w-[34px] h-[23px] rounded-full bg-orange-001/[0.3] text-gray-001 flex justify-center items-center">
+      <button
+        onClick={increaseAmount}
+        className="w-[34px] h-[23px] rounded-full bg-orange-001/[0.3] text-gray-001 flex justify-center items-center"
+      >
         +
       </button>
     </div>

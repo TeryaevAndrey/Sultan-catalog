@@ -16,36 +16,51 @@ const CartProduct: FC<any> = ({
   price,
   parameters,
   deleteProduct,
+  amount,
 }) => {
   const dispatch = useAppDispatch();
   const productsCart = useAppSelector((state) => state.cart.productsCart);
-  const [amount, setAmount] = React.useState<number>(1);
+  const [amountValue, setAmountValue] = React.useState<number>(amount || 1);
   const [priceValue, setPriceValue] = React.useState<number>(price);
 
   const reduceAmount = () => {
-    if(amount <= 0) {
+    if (amountValue <= 0) {
       return;
     }
 
-    setAmount((prev) => prev - 1);
-  }
+    setAmountValue((prev) => prev - 1);
+  };
 
   const increaseAmount = () => {
-    setAmount((prev) => prev + 1);
-  }
+    setAmountValue((prev) => prev + 1);
+  };
 
   const changeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAmount(Number(e.target.value));
-  }
+    setAmountValue(Number(e.target.value));
+  };
+
+  React.useEffect(() => {
+    dispatch(
+      setProductsCart(
+        productsCart.map((product) => {
+          if (product.id === id) {
+            return { ...product, id: id, amount: amountValue };
+          } else {
+            return { ...product };
+          }
+        })
+      )
+    );
+  }, [amountValue]);
 
   React.useEffect(() => {
     setPriceValue((prev) => prev - price);
   }, [reduceAmount]);
 
   React.useEffect(() => {
-    setPriceValue(price * amount);
+    setPriceValue(price * amountValue);
   }, [increaseAmount]);
-  
+
   return (
     <div className="py-5 flex flex-col xl:flex-row xl:items-center xl:justify-between w-full border-t border-gray-001/[0.3] border-dotted flex-wrap last:border-b">
       <img
@@ -67,7 +82,7 @@ const CartProduct: FC<any> = ({
           <Counter
             reduceAmount={reduceAmount}
             increaseAmount={increaseAmount}
-            amount={amount}
+            amount={amountValue}
             onChange={changeAmount}
           />
         </div>

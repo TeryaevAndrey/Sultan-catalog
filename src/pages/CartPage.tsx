@@ -10,12 +10,6 @@ const CartPage: FC = () => {
   const productsCart = JSON.parse(localStorage.getItem("productsCart") || "[]");
   const dispatch = useAppDispatch();
 
-  React.useEffect(() => {
-    dispatch(
-      setProductsCart(JSON.parse(localStorage.getItem("productsCart") || "[]"))
-    );
-  }, []);
-
   return (
     <section className="pb-12">
       <div className="container">
