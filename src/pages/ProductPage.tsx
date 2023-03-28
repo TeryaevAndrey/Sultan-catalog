@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Crumbs from "../components/Crumbs";
-import Counter from "../components/Product/Counter";
+import Counter from "../components/Counter";
 import ToCartBtn from "../components/ToCartBtn";
 import Share from "../components/Share";
 import Characteristics from "../components/Characteristics";
