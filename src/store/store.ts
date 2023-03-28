@@ -13,7 +13,7 @@ export const store = configureStore({
     parameters: parametersSlice.reducer,
     pagination: paginationSlice.reducer,
     categories: categoriesSlice.reducer,
-    cart: cartSlice.reducer
+    cart: cartSlice.reducer,
   },
 });
 
