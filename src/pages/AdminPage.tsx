@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { setProductsList } from "../store/productsSlice";
 import productsData from "../components/Catalog/Products/products.json";
 import Pagination from "../components/Pagination";
+import ProductAdmin from "../components/Catalog/Products/ProductAdmin";
 
 const AdminPage: FC = () => {
   const products: IProduct[] =
@@ -38,7 +39,7 @@ const AdminPage: FC = () => {
             .slice((currentPage - 1) * perProducts, currentPage * perProducts)
             .map((product) => {
               return (
-                <Product
+                <ProductAdmin
                   key={product.id}
                   id={product.id}
                   title={product.title}
@@ -53,10 +54,12 @@ const AdminPage: FC = () => {
             })}
         </div>
         <div
-        className={`${totalPages > 1 ? "flex" : "hidden"} justify-center mt-12`}
-      >
-        <Pagination />
-      </div>
+          className={`${
+            totalPages > 1 ? "flex" : "hidden"
+          } justify-center mt-12`}
+        >
+          <Pagination />
+        </div>
       </div>
     </div>
   );

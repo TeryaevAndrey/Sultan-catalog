@@ -6,18 +6,20 @@ import Share from "../components/Share";
 import Characteristics from "../components/Characteristics";
 import ArrowBottomImg from "../assets/images/sort-arrow.svg";
 import Back from "../components/Back";
-import { useAppSelector } from "../store/hooks";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import Weight from "../components/Product/Weight";
+import { setProductsCart } from "../store/cartSlice";
 
 const ProductPage: FC = () => {
+  const dispatch = useAppDispatch();
   const product =
     JSON.parse(localStorage.getItem("currentProduct") || "{}") ||
     useAppSelector((state) => state.products.currentProduct);
-  const productsCart = JSON.parse(localStorage.getItem("productsCart") || "[]");
+  const productsCart =
+    useAppSelector((state) => state.cart.productsCart) ||
+    JSON.parse(localStorage.getItem("productsCart") || "[]");
   const [inCart, setInCart] = React.useState<boolean>(
-    productsCart.find((product: IProduct) => product.id === product.id)
-      ? true
-      : false
+    productsCart.find((el: IProduct) => el.id === product.id) ? true : false
   );
   const [amount, setAmount] = React.useState<number>(0);
 
@@ -58,7 +60,24 @@ const ProductPage: FC = () => {
             weightValue: product.weightValue,
             price: product.price,
             parameters: product.parameters,
-            amount,
+            amount: amount > 0 ? amount : 1,
+          },
+        ])
+      );
+
+      dispatch(
+        setProductsCart([
+          ...productsCart,
+          {
+            id: product.id,
+            img: product.img,
+            title: product.title,
+            description: product.description,
+            typeWeight: product.typeWeight,
+            weightValue: product.weightValue,
+            price: product.price,
+            parameters: product.parameters,
+            amount: amount > 0 ? amount : 1,
           },
         ])
       );
@@ -66,7 +85,13 @@ const ProductPage: FC = () => {
       localStorage.setItem(
         "productsCart",
         JSON.stringify(
-          productsCart.filter((product: IProduct) => product.id !== product.id)
+          productsCart.filter((el: IProduct) => el.id !== product.id)
+        )
+      );
+
+      dispatch(
+        setProductsCart(
+          productsCart.filter((el: IProduct) => el.id !== product.id)
         )
       );
     }

@@ -6,6 +6,7 @@ import Weight from "../../Product/Weight";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../store/hooks";
 import { setCurrentProduct } from "../../../store/productsSlice";
+import { setProductsCart } from "../../../store/cartSlice";
 
 const Product: FC<IProduct> = ({
   id,
@@ -80,10 +81,33 @@ const Product: FC<IProduct> = ({
           },
         ])
       );
+
+      dispatch(
+        setProductsCart([
+          ...productsCart,
+          {
+            id,
+            img,
+            title,
+            description,
+            typeWeight,
+            weightValue,
+            price,
+            parameters,
+            amount: 1,
+          },
+        ])
+      );
     } else {
       localStorage.setItem(
         "productsCart",
         JSON.stringify(
+          productsCart.filter((product: IProduct) => product.id !== id)
+        )
+      );
+
+      dispatch(
+        setProductsCart(
           productsCart.filter((product: IProduct) => product.id !== id)
         )
       );
