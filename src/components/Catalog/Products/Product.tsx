@@ -92,7 +92,7 @@ const Product: FC<IProduct> = ({
 
   return (
     <div
-      className="w-full rounded-[10px] flex flex-col bg-[white] shadow-lg px-6 py-7 ease-linear duration-200 lg:hover:scale-[1.008]"
+      className="w-full rounded-[10px] flex flex-col bg-[white] shadow-lg px-6 py-7 ease-linear duration-200 lg:hover:scale-[1.008] cursor-pointer"
       onClick={goToProductPage}
     >
       <img className="max-h-[194px] object-contain" src={img} alt="product" />

@@ -13,6 +13,64 @@ const ProductPage: FC = () => {
   const product =
     JSON.parse(localStorage.getItem("currentProduct") || "{}") ||
     useAppSelector((state) => state.products.currentProduct);
+  const productsCart = JSON.parse(localStorage.getItem("productsCart") || "[]");
+  const [inCart, setInCart] = React.useState<boolean>(
+    productsCart.find((product: IProduct) => product.id === product.id)
+      ? true
+      : false
+  );
+  const [amount, setAmount] = React.useState<number>(0);
+
+  const reduceAmount = () => {
+    if (amount <= 0) {
+      return;
+    }
+
+    setAmount((prev) => prev - 1);
+  };
+
+  const increaseAmount = () => {
+    setAmount((prev) => prev + 1);
+  };
+
+  const changeAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAmount(Number(e.target.value));
+  };
+
+  const putInTheCart = (e: React.MouseEvent) => {
+    e.stopPropagation();
+
+    setInCart(!inCart);
+  };
+
+  React.useEffect(() => {
+    if (inCart) {
+      localStorage.setItem(
+        "productsCart",
+        JSON.stringify([
+          ...productsCart,
+          {
+            id: product.id,
+            img: product.img,
+            title: product.title,
+            description: product.description,
+            typeWeight: product.typeWeight,
+            weightValue: product.weightValue,
+            price: product.price,
+            parameters: product.parameters,
+            amount,
+          },
+        ])
+      );
+    } else {
+      localStorage.setItem(
+        "productsCart",
+        JSON.stringify(
+          productsCart.filter((product: IProduct) => product.id !== product.id)
+        )
+      );
+    }
+  }, [inCart]);
 
   return (
     <section className="pb-12">
@@ -49,9 +107,14 @@ const ProductPage: FC = () => {
               <p className="font-extrabold text-xl lg:text-3xl text-black-001">
                 {product.price} ₸
               </p>
-              <Counter />
+              <Counter
+                reduceAmount={reduceAmount}
+                increaseAmount={increaseAmount}
+                amount={amount}
+                onChange={changeAmount}
+              />
               <div className="flex items-center justify-between gap-7">
-                <ToCartBtn />
+                <ToCartBtn onClick={putInTheCart} inCart={inCart} />
                 <div className="lg:hidden">
                   <Share />
                 </div>

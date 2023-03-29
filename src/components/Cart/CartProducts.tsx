@@ -61,7 +61,9 @@ const CartProducts: FC = () => {
 
       {productsCart.length > 0 && (
         <div className="flex flex-col sm:flex-row-reverse sm:justify-between items-center text-center mt-5 gap-6">
-          <p className="text-3xl font-bold text-black-001">{sum.toFixed(2)} ₸</p>
+          <p className="text-3xl font-bold text-black-001">
+            {sum.toFixed(2)} ₸
+          </p>
           <button className="px-20 py-8 bg-orange-001 rounded-[80px] w-full sm:max-w-[192px] sm:px-9 sm:py-5 font-bold text-sm">
             Оформить заказ
           </button>
