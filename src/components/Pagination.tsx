@@ -44,16 +44,15 @@ const Pagination: FC = () => {
       <div className="flex items-center text-gray-001">
         {pages.map((page, index) => {
           return (
-            <Link
+            <div
               key={index}
               className={`font-medium w-[35px] h-[35px] rounded-full ${
                 currentPage === page ? "bg-orange-001/[0.3]" : "bg-white"
-              } flex items-center justify-center`}
-              to="/"
+              } flex items-center justify-center cursor-pointer`}
               onClick={() => changeCurrentPage(page)}
             >
               {page % 5 === 0 ? page++ : page}
-            </Link>
+            </div>
           );
         })}
       </div>
