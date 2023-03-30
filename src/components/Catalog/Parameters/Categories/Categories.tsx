@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { setSort } from "../../../../store/catalogSlice";
 import { setCategoriesSelected } from "../../../../store/categoriesSlice";
 import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
 import { setProductsList } from "../../../../store/productsSlice";
@@ -35,6 +36,8 @@ const Categories: FC<ICategories> = ({ categories }) => {
                   )
                 );
               }
+
+              dispatch(setSort({sortBy: "title", title: "Название"}));
             }}
           >
             {el}

@@ -16,6 +16,7 @@ import {
   setManufacturersSelected,
   setSearchedManufacturers,
 } from "../../../store/parametersSlice";
+import { setSort } from "../../../store/catalogSlice";
 
 const Parameters: FC = () => {
   const dispatch = useAppDispatch();
@@ -96,6 +97,7 @@ const Parameters: FC = () => {
       dispatch(setProductsList(filteredProducts));
     }
 
+    dispatch(setSort({sortBy: "title", title: "Название"}));
     dispatch(setCurrentPage(1));
   };
 
@@ -148,7 +150,7 @@ const Parameters: FC = () => {
         </div>
       </form>
       <Categories categories={categories} />
-      <div className="lg:hidden mt-6">
+      <div className="md:hidden mt-6">
         <Sort />
       </div>
     </div>
