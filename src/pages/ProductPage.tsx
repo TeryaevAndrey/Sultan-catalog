@@ -22,6 +22,8 @@ const ProductPage: FC = () => {
     productsCart.find((el: IProduct) => el.id === product.id) ? true : false
   );
   const [amount, setAmount] = React.useState<number>(0);
+  const [isOpenDescription, setIsOpenDescription] =
+    React.useState<boolean>(false);
 
   const reduceAmount = () => {
     if (amount <= 0) {
@@ -185,11 +187,15 @@ const ProductPage: FC = () => {
             </div>
             <div className="flex flex-col mt-2.5">
               <div>
-                <div className="border-b border-gray-001/[0.3] border-dotted py-5 flex items-center gap-1 text-base text-black-001 font-medium cursor-pointer">
+                <div
+                  className="border-b border-gray-001/[0.3] border-dotted py-5 flex items-center gap-1 text-base text-black-001 font-medium cursor-pointer"
+                  onClick={() => setIsOpenDescription(!isOpenDescription)}
+                >
                   <span>Описание</span>
-                  <img src={ArrowBottomImg} alt="open" />
+                  <img className={`${isOpenDescription && "rotate-180"}`} src={ArrowBottomImg} alt="open" />
                 </div>
               </div>
+              <p className={`text-gray-001 mt-1 ${isOpenDescription ? "flex" : "hidden"}`}>{product.description}</p>
               {/* <div className="py-5 flex items-center gap-1 text-base text-black-001 font-medium cursor-pointer">
                 <span>Характеристики</span>
                 <img src={ArrowBottomImg} alt="open" />
