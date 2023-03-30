@@ -14,6 +14,7 @@ import {
   setPriceAfter,
   setSearchValue,
   setManufacturersSelected,
+  setSearchedManufacturers,
 } from "../../../store/parametersSlice";
 
 const Parameters: FC = () => {
@@ -63,7 +64,7 @@ const Parameters: FC = () => {
 
       const filteredProducts = filteredProductsByCategories.filter(
         (product) => {
-          const productPrice = Math.floor(product.price);
+          const productPrice = Math.floor(product.price!);
 
           return (
             (manufacturersSelected.length === 0 ||
@@ -82,7 +83,7 @@ const Parameters: FC = () => {
         JSON.parse(localStorage.getItem("products")!) || productsData;
 
       const filteredProducts = products.filter((product) => {
-        const productPrice = Math.floor(product.price);
+        const productPrice = Math.floor(product.price!);
 
         return (
           (manufacturersSelected.length === 0 ||
@@ -105,6 +106,8 @@ const Parameters: FC = () => {
     dispatch(setPriceAfter(""));
     dispatch(setSearchValue(""));
     dispatch(setManufacturersSelected([]));
+
+    dispatch(setSearchedManufacturers([]));
 
     return dispatch(setProductsList(productsData));
   };

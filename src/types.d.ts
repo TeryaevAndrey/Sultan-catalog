@@ -9,7 +9,7 @@ interface IProduct {
   typeWeight: string;
   weightValue: number | undefined;
   description: string;
-  price: number;
+  price: number | undefined;
   parameters: {
     hatch: number;
     manufacturer: string;
@@ -19,6 +19,6 @@ interface IProduct {
 }
 
 interface ICartProduct extends IProduct {
-  deleteProduct: React.MouseEventHandler,
+  deleteProduct?: React.MouseEventHandler,
   amount: number,
 }

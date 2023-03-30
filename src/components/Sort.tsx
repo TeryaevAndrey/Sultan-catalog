@@ -33,7 +33,7 @@ const Sort: FC = () => {
     const productsList = [...products];
 
     let sortedProducts = productsList.sort((prev, current) => {
-      return prev.price - current.price;
+      return prev.price! - current.price!;
     });
 
     dispatch(setProductsList(sortedProducts));
@@ -61,7 +61,7 @@ const Sort: FC = () => {
 
     if (sort.sortBy === "price") {
       let sortedProducts = productsList.sort((prev, current) => {
-        return current.price - prev.price;
+        return current.price! - prev.price!;
       });
 
       dispatch(setProductsList(sortedProducts));
@@ -90,7 +90,7 @@ const Sort: FC = () => {
 
     if (sort.sortBy === "price") {
       let sortedProducts = productsList.sort((prev, current) => {
-        return prev.price - current.price;
+        return prev.price! - current.price!;
       });
 
       dispatch(setProductsList(sortedProducts));

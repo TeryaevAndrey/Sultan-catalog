@@ -13,7 +13,7 @@ const Cart: FC = () => {
     let sum = 0;
 
     productsCart.forEach((product) => {
-      sum += product.price * product.amount;
+      sum += product.price! * product.amount;
     });
 
     setSum(sum);

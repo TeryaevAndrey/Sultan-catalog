@@ -43,7 +43,17 @@ const Header: FC = () => {
                 <img className="w-full h-full" src={LogoImg} alt="Султан" />
               </Link>
               <CatalogBtn />
-              <Search />
+              <Search
+                onChange={function (event: React.ChangeEvent<Element>): void {
+                  throw new Error("Function not implemented.");
+                }}
+                value={""}
+                onClick={function (
+                  event: React.MouseEvent<Element, MouseEvent>
+                ): void {
+                  throw new Error("Function not implemented.");
+                }}
+              />
               <div className="flex items-center gap-3">
                 <div className="flex flex-col gap-1 text-right">
                   <a

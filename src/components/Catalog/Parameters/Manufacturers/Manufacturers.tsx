@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
 import {
   setSearchValue,
   setManufacturersSelected,
+  setSearchedManufacturers,
 } from "../../../../store/parametersSlice";
 import ManufacturersItem from "./ManufacturersItem";
 import productsData from "../../Products/products.json";
@@ -15,9 +16,10 @@ const Manufacturers: FC = () => {
   const manufacturersSelected = useAppSelector(
     (state) => state.parameters.manufacturersSelected
   );
-  const [searchManufacturers, setSearchManufacturers] = React.useState<
-    string[]
-  >([]);
+  const searchedManufacturers = useAppSelector(
+    (state) => state.parameters.searchedManufacturers
+  );
+
   const products: IProduct[] =
     JSON.parse(localStorage.getItem("products")!) || productsData;
   const manufacturers = Array.from(
@@ -29,7 +31,7 @@ const Manufacturers: FC = () => {
     dispatch(setSearchValue(e.target.value));
 
     if (e.target.value === "") {
-      setSearchManufacturers([]);
+      dispatch(setSearchedManufacturers([]));
     }
   };
 
@@ -41,7 +43,7 @@ const Manufacturers: FC = () => {
         manufacturer.toLowerCase().includes(searchValue.toLowerCase())
       );
 
-      return setSearchManufacturers(manufacturersFiltered);
+      return dispatch(setSearchedManufacturers(manufacturersFiltered));
     }
   };
 
@@ -74,8 +76,8 @@ const Manufacturers: FC = () => {
         />
       </div>
       <div className="mt-3.5 flex flex-col">
-        {searchManufacturers.length > 0
-          ? searchManufacturers.map((manufacturer, index) => {
+        {searchedManufacturers.length > 0
+          ? searchedManufacturers.map((manufacturer, index) => {
               return (
                 <ManufacturersItem
                   onChange={changeCheckbox}
@@ -111,7 +113,7 @@ const Manufacturers: FC = () => {
             );
           })}
 
-        {searchManufacturers.length === 0 && manufacturers.length > 4 && (
+        {searchedManufacturers.length === 0 && manufacturers.length > 4 && (
           <div
             className="mt-3.5 flex items-center gap-2 text-gray-001 text-xs font-medium cursor-pointer"
             onClick={showAll}

@@ -29,7 +29,7 @@ const CartProducts: FC = () => {
     let sum = 0;
 
     productsCart.forEach((product) => {
-      sum += product.price * product.amount;
+      sum += product.price! * product.amount;
     });
 
     setSum(sum);
@@ -64,7 +64,7 @@ const CartProducts: FC = () => {
           <p className="text-3xl font-bold text-black-001">
             {sum.toFixed(2)} ₸
           </p>
-          <button className="px-20 py-8 bg-orange-001 rounded-[80px] w-full sm:max-w-[192px] sm:px-9 sm:py-5 font-bold text-sm">
+          <button className="px-20 py-8 bg-orange-001 rounded-[80px] w-full sm:max-w-[192px] sm:px-9 sm:py-5 font-bold text-sm" onClick={() => alert("Успешно!")}>
             Оформить заказ
           </button>
         </div>

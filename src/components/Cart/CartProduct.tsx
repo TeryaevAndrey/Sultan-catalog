@@ -21,7 +21,7 @@ const CartProduct: FC<ICartProduct> = ({
   const dispatch = useAppDispatch();
   const productsCart = useAppSelector((state) => state.cart.productsCart);
   const [amountValue, setAmountValue] = React.useState<number>(amount || 1);
-  const [priceValue, setPriceValue] = React.useState<number>(price);
+  const [priceValue, setPriceValue] = React.useState<number | undefined>(price);
 
   const reduceAmount = () => {
     if (amountValue <= 0) {
@@ -54,11 +54,11 @@ const CartProduct: FC<ICartProduct> = ({
   }, [amountValue]);
 
   React.useEffect(() => {
-    setPriceValue((prev) => prev - price);
+    setPriceValue((prev) => prev! - price!);
   }, [reduceAmount]);
 
   React.useEffect(() => {
-    setPriceValue(price * amountValue);
+    setPriceValue(price! * amountValue);
   }, [increaseAmount]);
 
   return (
@@ -87,9 +87,9 @@ const CartProduct: FC<ICartProduct> = ({
           />
         </div>
         <p className="text-base xl:text-3xl font-bold text-black-001 px-[15px] xl:px-10 py-1 border-l border-r border-gray-001/[0.3] border-dotted ml-auto mr-3 max-h-[44px] h-full">
-          {priceValue.toFixed(2)} ₸
+          {priceValue!.toFixed(2)} ₸
         </p>
-        <Delete onClick={deleteProduct} />
+        <Delete onClick={deleteProduct!} />
       </div>
     </div>
   );

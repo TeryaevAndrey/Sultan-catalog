@@ -40,7 +40,7 @@ const CatalogPage: FC = () => {
   React.useEffect(() => {
     if (categoriesSelected.length === 0) {
       const filteredProducts = products.filter((product) => {
-        const productPrice = Math.floor(product.price);
+        const productPrice = Math.floor(product.price!);
 
         return (
           (manufacturersSelected.length === 0 ||
@@ -60,7 +60,7 @@ const CatalogPage: FC = () => {
 
       const filteredProducts = filteredProductsByCategories.filter(
         (product) => {
-          const productPrice = Math.floor(product.price);
+          const productPrice = Math.floor(product.price!);
 
           return (
             (manufacturersSelected.length === 0 ||
