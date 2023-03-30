@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import { setEditProductInfo, setId } from "../../../store/editSlice";
+import { useAppDispatch } from "../../../store/hooks";
 import Characteristics from "../../Characteristics";
 import Weight from "../../Product/Weight";
 
@@ -14,6 +16,22 @@ const ProductAdmin: FC<IProduct> = ({
   parameters,
 }) => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  const editBtnHandler = () => {
+    dispatch(setId(id));
+    dispatch(setEditProductInfo({
+      img,
+      title,
+      weightValue,
+      price, 
+      manufacturer: parameters.manufacturer,
+      description,
+      brand: parameters.brand
+    }));
+
+    navigate(`/admin/edit/:${id}`);
+  }
 
   return (
     <div className="w-full rounded-[10px] flex flex-col bg-[white] shadow-lg px-6 py-7 ease-linear duration-200">
@@ -37,7 +55,7 @@ const ProductAdmin: FC<IProduct> = ({
         <p className="text-black-001 font-extrabold text-base">{price} ₸</p>
         <div
           className="text-black-001 cursor-pointer"
-          onClick={() => navigate(`/admin/edit/:${id}`)}
+          onClick={editBtnHandler}
         >
           редактировать
         </div>

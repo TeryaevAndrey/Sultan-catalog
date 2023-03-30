@@ -5,6 +5,7 @@ import { catalogSlice } from "./catalogSlice";
 import { parametersSlice } from "./parametersSlice";
 import { productsSlice } from "./productsSlice";
 import { cartSlice } from "./cartSlice";
+import { editSlice } from "./editSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     pagination: paginationSlice.reducer,
     categories: categoriesSlice.reducer,
     cart: cartSlice.reducer,
+    edit: editSlice.reducer,
   },
 });
 
