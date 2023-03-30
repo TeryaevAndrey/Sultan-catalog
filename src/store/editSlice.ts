@@ -8,6 +8,7 @@ interface IEditProduct {
   price: number;
   manufacturer: string;
   brand: string;
+  typeCare: string[];
 }
 
 const initialState: {
@@ -22,7 +23,8 @@ const initialState: {
     description: "",
     price: 0,
     manufacturer: "",
-    brand: ""
+    brand: "",
+    typeCare: [],
   },
 };
 

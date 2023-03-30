@@ -20,18 +20,21 @@ const ProductAdmin: FC<IProduct> = ({
 
   const editBtnHandler = () => {
     dispatch(setId(id));
-    dispatch(setEditProductInfo({
-      img,
-      title,
-      weightValue,
-      price, 
-      manufacturer: parameters.manufacturer,
-      description,
-      brand: parameters.brand
-    }));
+    dispatch(
+      setEditProductInfo({
+        img,
+        title,
+        weightValue,
+        price,
+        manufacturer: parameters.manufacturer,
+        description,
+        brand: parameters.brand,
+        typeCare: parameters.typeCare,
+      })
+    );
 
     navigate(`/admin/edit/:${id}`);
-  }
+  };
 
   return (
     <div className="w-full rounded-[10px] flex flex-col bg-[white] shadow-lg px-6 py-7 ease-linear duration-200">
@@ -53,10 +56,7 @@ const ProductAdmin: FC<IProduct> = ({
       </div>
       <div className="flex items-center justify-between mt-auto">
         <p className="text-black-001 font-extrabold text-base">{price} ₸</p>
-        <div
-          className="text-black-001 cursor-pointer"
-          onClick={editBtnHandler}
-        >
+        <div className="text-black-001 cursor-pointer" onClick={editBtnHandler}>
           редактировать
         </div>
       </div>
