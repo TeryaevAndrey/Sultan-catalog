@@ -4,6 +4,7 @@ import { setEditProductInfo, setId } from "../../../store/editSlice";
 import { useAppDispatch } from "../../../store/hooks";
 import Characteristics from "../../Characteristics";
 import Weight from "../../Product/Weight";
+import productsData from "./products.json";
 
 const ProductAdmin: FC<IProduct> = ({
   id,
@@ -17,6 +18,7 @@ const ProductAdmin: FC<IProduct> = ({
 }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const products = localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")!) : productsData;
 
   const editBtnHandler = () => {
     dispatch(setId(id));
@@ -34,6 +36,21 @@ const ProductAdmin: FC<IProduct> = ({
     );
 
     navigate(`/admin/edit/:${id}`);
+  };
+
+  const deleteBtnHandler = () => {
+    localStorage.setItem(
+      "products",
+      JSON.stringify(
+        products.filter(
+          (product: IProduct) => {
+            return product.id !== id;
+          }
+        )
+      )
+    );
+
+    alert("Успешно удалено!");
   };
 
   return (
@@ -56,8 +73,16 @@ const ProductAdmin: FC<IProduct> = ({
       </div>
       <div className="flex items-center justify-between mt-auto">
         <p className="text-black-001 font-extrabold text-base">{price} ₸</p>
-        <div className="text-black-001 cursor-pointer" onClick={editBtnHandler}>
-          редактировать
+        <div className="flex flex-col gap-1">
+          <div
+            className="text-black-001 cursor-pointer"
+            onClick={editBtnHandler}
+          >
+            редактировать
+          </div>
+          <div className="text-red-500 cursor-pointer" onClick={deleteBtnHandler}>
+            Удалить
+          </div>
         </div>
       </div>
     </div>

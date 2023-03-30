@@ -5,6 +5,7 @@ import { setProductsList } from "../store/productsSlice";
 import productsData from "../components/Catalog/Products/products.json";
 import Pagination from "../components/Pagination";
 import ProductAdmin from "../components/Catalog/Products/ProductAdmin";
+import { useNavigate } from "react-router-dom";
 
 const AdminPage: FC = () => {
   const products: IProduct[] =
@@ -15,6 +16,7 @@ const AdminPage: FC = () => {
   const totalPages = useAppSelector((state) => state.pagination.totalPages);
   const productsWrapper = React.useRef<HTMLDivElement>(null);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     productsWrapper.current?.scrollIntoView({ behavior: "smooth" });
@@ -27,7 +29,7 @@ const AdminPage: FC = () => {
   return (
     <div className="py-12">
       <div className="container">
-        <button className="bg-orange-001 px-3 py-2 rounded-[30px]">
+        <button className="bg-orange-001 px-3 py-2 rounded-[30px]" onClick={() => navigate("/admin/add")}>
           Добавить товар
         </button>
 
