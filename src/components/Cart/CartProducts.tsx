@@ -14,7 +14,7 @@ const CartProducts: FC = () => {
     );
   }, []);
 
-  const deleteProduct = (id: number) => {
+  const deleteProduct = (id: number | string) => {
     localStorage.setItem(
       "productsCart",
       JSON.stringify(productsCart.filter((product) => product.id !== id))
@@ -38,7 +38,7 @@ const CartProducts: FC = () => {
   return (
     <div className="w-full flex flex-col">
       {productsCart.length > 0 ? (
-        productsCart.map((product: any) => {
+        productsCart.map((product) => {
           return (
             <CartProduct
               key={product.id}

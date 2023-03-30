@@ -4,7 +4,7 @@ import VolumeImg from "../../assets/images/volume.svg";
 
 interface IWeight {
   type: string;
-  value: number;
+  value: number | undefined;
 }
 
 const Weight: FC<IWeight> = ({ type, value }) => {

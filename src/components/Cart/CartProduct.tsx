@@ -6,7 +6,7 @@ import Delete from "../Delete";
 import Counter from "../Counter";
 import Weight from "../Product/Weight";
 
-const CartProduct: FC<any> = ({
+const CartProduct: FC<ICartProduct> = ({
   id,
   img,
   title,

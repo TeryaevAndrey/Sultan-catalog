@@ -17,3 +17,8 @@ interface IProduct {
     typeCare: string[];
   };
 }
+
+interface ICartProduct extends IProduct {
+  deleteProduct: React.MouseEventHandler,
+  amount: number,
+}
