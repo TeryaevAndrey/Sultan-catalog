@@ -3,11 +3,14 @@ import { setEditProductInfo } from "../store/editSlice";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import productsData from "../components/Catalog/Products/products.json";
 import Title from "../components/Title";
+import Back from "../components/Back";
+import { useNavigate } from "react-router-dom";
 
 const EditPage: FC = () => {
   const productId = useAppSelector((state) => state.edit.id);
   const info = useAppSelector((state) => state.edit.product);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const formHandler = (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,6 +49,7 @@ const EditPage: FC = () => {
   return (
     <div className="pb-12 lg:pb-24">
       <div className="container">
+        <div className="text-gray-001 cursor-pointer mt-5" onClick={() => navigate("/admin")}>Назад</div>
         <div className="py-11">
           <Title title="Редактирование товара" />
         </div>

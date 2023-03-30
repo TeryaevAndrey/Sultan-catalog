@@ -5,12 +5,14 @@ import { setAddProductInfo } from "../store/addProductSlice";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 
 import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 
 const AddProductPage: FC = () => {
   const products: IProduct[] =
     JSON.parse(localStorage.getItem("products")!) || productsData;
   const info = useAppSelector((state) => state.add.info);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const changeCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -62,6 +64,7 @@ const AddProductPage: FC = () => {
   return (
     <div className="pb-12 lg:pb-24">
       <div className="container">
+      <div className="text-gray-001 cursor-pointer mt-5" onClick={() => navigate("/admin")}>Назад</div>
         <div className="py-11">
           <Title title="Добавление товара" />
         </div>
