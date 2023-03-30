@@ -34,13 +34,28 @@ const Parameters: FC = () => {
 
   const formHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (manufacturersSelected.length === 0 && !priceBefore && !priceAfter) {
-      return dispatch(setProductsList(productsData));
+      if (categoriesSelected.length > 0) {
+        const products: IProduct[] =
+          JSON.parse(localStorage.getItem("products")!) || productsData;
+
+        const filteredProductsByCategories = products.filter((product) => {
+          return product.parameters.typeCare.some((item) =>
+            categoriesSelected.includes(item)
+          );
+        });
+
+        return dispatch(setProductsList(filteredProductsByCategories));
+      } else {
+        return dispatch(setProductsList(products));
+      }
     }
 
     if (categoriesSelected.length > 0) {
-      const filteredProductsByCategories = productsData.filter((product) => {
+      const products: IProduct[] =
+        JSON.parse(localStorage.getItem("products")!) || productsData;
+
+      const filteredProductsByCategories = products.filter((product) => {
         return product.parameters.typeCare.some((item) =>
           categoriesSelected.includes(item)
         );
@@ -63,7 +78,10 @@ const Parameters: FC = () => {
 
       dispatch(setProductsList(filteredProducts));
     } else {
-      const filteredProducts = productsData.filter((product) => {
+      const products: IProduct[] =
+        JSON.parse(localStorage.getItem("products")!) || productsData;
+
+      const filteredProducts = products.filter((product) => {
         const productPrice = Math.floor(product.price);
 
         return (

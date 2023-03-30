@@ -18,8 +18,10 @@ const Manufacturers: FC = () => {
   const [searchManufacturers, setSearchManufacturers] = React.useState<
     string[]
   >([]);
+  const products: IProduct[] =
+    JSON.parse(localStorage.getItem("products")!) || productsData;
   const manufacturers = Array.from(
-    new Set(productsData.map((product) => product.parameters.manufacturer))
+    new Set(products.map((product) => product.parameters.manufacturer))
   );
   const [isAll, setIsAll] = React.useState<boolean>(false);
 

@@ -11,11 +11,13 @@ const EditPage: FC = () => {
 
   const formHandler = (e: React.FormEvent) => {
     e.preventDefault();
+    const products: IProduct[] =
+      JSON.parse(localStorage.getItem("products")!) || productsData;
 
     localStorage.setItem(
       "products",
       JSON.stringify(
-        productsData.map((product) => {
+        products.map((product) => {
           if (product.id === productId) {
             return {
               ...product,

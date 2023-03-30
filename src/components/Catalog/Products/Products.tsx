@@ -7,9 +7,9 @@ import productsData from "./products.json";
 
 const Products: FC = () => {
   const dispatch = useAppDispatch();
-  const products: IProduct[] =
-    JSON.parse(localStorage.getItem("products")!) ||
-    useAppSelector((state) => state.products.productsList);
+  const products: IProduct[] = useAppSelector(
+    (state) => state.products.productsList
+  );
   const currentPage = useAppSelector((state) => state.pagination.currentPage);
   const perProducts = useAppSelector((state) => state.pagination.perProducts);
   const totalPages = useAppSelector((state) => state.pagination.totalPages);
@@ -19,7 +19,11 @@ const Products: FC = () => {
   const productsWrapper = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    dispatch(setProductsList(productsData));
+    dispatch(
+      setProductsList(
+        JSON.parse(localStorage.getItem("products")!) || productsData
+      )
+    );
   }, []);
 
   React.useEffect(() => {

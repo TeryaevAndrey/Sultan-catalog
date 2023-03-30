@@ -22,11 +22,15 @@ const CatalogPage: FC = () => {
   const manufacturersSelected = useAppSelector(
     (state) => state.parameters.manufacturersSelected
   );
+  const products: IProduct[] =
+    JSON.parse(localStorage.getItem("products")!) || productsData;
 
   React.useEffect(() => {
     const categories: string[] = [];
+    const products: IProduct[] =
+      JSON.parse(localStorage.getItem("products")!) || productsData;
 
-    productsData.forEach((product) => {
+    products.forEach((product) => {
       categories.push(...product.parameters.typeCare);
     });
 
@@ -35,7 +39,7 @@ const CatalogPage: FC = () => {
 
   React.useEffect(() => {
     if (categoriesSelected.length === 0) {
-      const filteredProducts = productsData.filter((product) => {
+      const filteredProducts = products.filter((product) => {
         const productPrice = Math.floor(product.price);
 
         return (
@@ -48,7 +52,7 @@ const CatalogPage: FC = () => {
 
       dispatch(setProductsList(filteredProducts));
     } else {
-      const filteredProductsByCategories = productsData.filter((product) => {
+      const filteredProductsByCategories = products.filter((product) => {
         return product.parameters.typeCare.some((item) =>
           categoriesSelected.includes(item)
         );

@@ -10,8 +10,6 @@ const Categories: FC<ICategories> = ({ categories }) => {
     (state) => state.categories.categoriesSelected
   );
 
-  console.log(categoriesSelected);
-
   return (
     <ul className="text-gray-001 mt-3.5">
       {categories.map((el, index) => {

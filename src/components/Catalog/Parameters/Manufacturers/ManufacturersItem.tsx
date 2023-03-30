@@ -15,6 +15,9 @@ const ManufacturersItem: FC<IManufacturersItem> = ({
   checked,
   value,
 }) => {
+  const products: IProduct[] =
+    JSON.parse(localStorage.getItem("products")!) || productsData;
+
   return (
     <div className="flex items-center gap-2 relative">
       <input
@@ -34,7 +37,7 @@ const ManufacturersItem: FC<IManufacturersItem> = ({
         <span className="text-[10px] leading-none">
           (
           {
-            productsData.filter(
+            products.filter(
               (product) => product.parameters.manufacturer === manufacturer
             ).length
           }

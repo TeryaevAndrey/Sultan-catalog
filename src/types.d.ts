@@ -9,7 +9,7 @@ interface IProduct {
   typeWeight: string;
   weightValue: number | undefined;
   description: string;
-  price: number | undefined;
+  price: number;
   parameters: {
     hatch: number;
     manufacturer: string;
