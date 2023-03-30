@@ -3,13 +3,13 @@ interface ICategories {
 }
 
 interface IProduct {
-  id: number;
+  id: number | string;
   img: string;
   title: string;
   typeWeight: string;
-  weightValue: number;
+  weightValue: number | undefined;
   description: string;
-  price: number;
+  price: number | undefined;
   parameters: {
     hatch: number;
     manufacturer: string;

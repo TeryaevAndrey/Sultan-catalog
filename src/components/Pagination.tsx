@@ -7,7 +7,9 @@ import { setCurrentPage, setTotalPages } from "../store/paginationSlice";
 
 const Pagination: FC = () => {
   const dispatch = useAppDispatch();
-  const products = useAppSelector((state) => state.products.productsList);
+  const products =
+    useAppSelector((state) => state.products.productsList) ||
+    JSON.parse(localStorage.getItem("products")!);
   const totalPages = useAppSelector((state) => state.pagination.totalPages);
   const currentPage = useAppSelector((state) => state.pagination.currentPage);
   const pages: number[] = [];

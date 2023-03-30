@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { setEditProductInfo } from "../store/editSlice";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import productsData from "../components/Catalog/Products/products.json";
+import Title from "../components/Title";
 
 const EditPage: FC = () => {
   const productId = useAppSelector((state) => state.edit.id);
@@ -41,8 +42,12 @@ const EditPage: FC = () => {
   };
 
   return (
-    <div>
+    <div className="pb-12 lg:pb-24">
       <div className="container">
+        <div className="py-11">
+          <Title title="Редактирование товара" />
+        </div>
+
         <form onSubmit={formHandler}>
           <div className="flex items-center gap-7 flex-wrap gap-y-7">
             <div className="flex flex-col gap-1 text-gray-001">

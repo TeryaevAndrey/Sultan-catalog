@@ -3,25 +3,25 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface IEditProduct {
   img: string;
   title: string;
-  weightValue: number;
+  weightValue: number | undefined;
   description: string;
-  price: number;
+  price: number | undefined;
   manufacturer: string;
   brand: string;
   typeCare: string[];
 }
 
 const initialState: {
-  id: number | undefined;
+  id: string | number | undefined;
   product: IEditProduct;
 } = {
   id: undefined,
   product: {
     img: "",
     title: "",
-    weightValue: 0,
+    weightValue: undefined,
     description: "",
-    price: 0,
+    price: undefined,
     manufacturer: "",
     brand: "",
     typeCare: [],
@@ -32,7 +32,7 @@ export const editSlice = createSlice({
   name: "edit",
   initialState,
   reducers: {
-    setId: (state, action: PayloadAction<number>) => {
+    setId: (state, action: PayloadAction<number | string>) => {
       state.id = action.payload;
     },
 
