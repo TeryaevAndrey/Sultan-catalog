@@ -120,14 +120,13 @@ const Parameters: FC = () => {
         <h3 className="uppercase text-base font-medium text-black-001">
           ПОДБОР ПО ПАРАМЕТРАМ
         </h3>
-        <button className="flex justify-center items-center w-8 h-8 bg-orange-001/[0.5] rounded-full lg:hidden">
+        <button className="flex justify-center items-center w-8 h-8 bg-orange-001/[0.5] rounded-full lg:hidden" onClick={() => setIsOpenParameters(!isOpenParameters)}>
           <img
             className={`w-[10px] h-[8px] ${
               isOpenParameters ? "" : "rotate-180"
             }`}
             src={ArrowTopImg}
             alt="open"
-            onClick={() => setIsOpenParameters(!isOpenParameters)}
           />
         </button>
       </div>
