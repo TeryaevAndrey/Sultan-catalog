@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import CategoriesSlider from "../components/Catalog/CategoriesSlider";
+import CategoriesSlider from "../components/Catalog/Parameters/Categories/CategoriesSlider";
 import Parameters from "../components/Catalog/Parameters/Parameters";
 import Products from "../components/Catalog/Products/Products";
 import Tabs from "../components/Catalog/Tabs/Tabs";

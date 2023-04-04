@@ -1,10 +1,9 @@
 import React, { FC } from "react";
-import ProductImg from "../../assets/images/products/product-1.png";
-import { setProductsCart } from "../../store/cartSlice";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import Delete from "../Delete";
-import Counter from "../Counter";
-import Weight from "../Product/Weight";
+import { setProductsCart } from "../../../../store/cartSlice";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import Delete from "../../../Delete";
+import Counter from "../../../Counter";
+import Weight from "../../../Weight";
 
 const CartProduct: FC<ICartProduct> = ({
   id,

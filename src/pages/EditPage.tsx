@@ -49,7 +49,12 @@ const EditPage: FC = () => {
   return (
     <div className="pb-12 lg:pb-24">
       <div className="container">
-        <div className="text-gray-001 cursor-pointer mt-5" onClick={() => navigate("/admin")}>Назад</div>
+        <div
+          className="text-gray-001 cursor-pointer mt-5"
+          onClick={() => navigate("/admin")}
+        >
+          Назад
+        </div>
         <div className="py-11">
           <Title title="Редактирование товара" />
         </div>

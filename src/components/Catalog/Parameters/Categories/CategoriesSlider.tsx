@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import { setSort } from "../../store/catalogSlice";
-import { setCategoriesSelected } from "../../store/categoriesSlice";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { setSort } from "../../../../store/catalogSlice";
+import { setCategoriesSelected } from "../../../../store/categoriesSlice";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
 
 const CategoriesSlider: FC<ICategories> = ({ categories }) => {
   const dispatch = useAppDispatch();
@@ -36,7 +36,7 @@ const CategoriesSlider: FC<ICategories> = ({ categories }) => {
                   );
                 }
 
-                dispatch(setSort({sortBy: "title", title: "Название"}));
+                dispatch(setSort({ sortBy: "title", title: "Название" }));
               }}
             >
               {el}

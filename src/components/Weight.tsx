@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import WeightImg from "../../assets/images/product/weight.svg";
-import VolumeImg from "../../assets/images/volume.svg";
+import WeightImg from "../assets/images/product/weight.svg";
+import VolumeImg from "../assets/images/volume.svg";
 
 interface IWeight {
   type: string;

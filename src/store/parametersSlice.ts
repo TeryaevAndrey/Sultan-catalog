@@ -6,14 +6,14 @@ const initialState: {
 
   searchValue: string;
   manufacturersSelected: string[];
-  searchedManufacturers: string[] | [],
+  searchedManufacturers: string[] | [];
 } = {
   priceBefore: "",
   priceAfter: "",
 
   searchValue: "",
   manufacturersSelected: [],
-  searchedManufacturers: []
+  searchedManufacturers: [],
 };
 
 export const parametersSlice = createSlice({
@@ -38,7 +38,7 @@ export const parametersSlice = createSlice({
 
     setSearchedManufacturers: (state, action: PayloadAction<string[] | []>) => {
       state.searchedManufacturers = action.payload;
-    }
+    },
   },
 });
 
@@ -47,5 +47,5 @@ export const {
   setPriceAfter,
   setSearchValue,
   setManufacturersSelected,
-  setSearchedManufacturers
+  setSearchedManufacturers,
 } = parametersSlice.actions;

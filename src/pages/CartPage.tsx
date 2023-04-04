@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Back from "../components/Back";
-import CartProducts from "../components/Cart/CartProducts";
+import CartProducts from "../components/Header/HeaderTop/Cart/CartProducts";
 import Crumbs from "../components/Crumbs";
 import Title from "../components/Title";
 import { setProductsCart } from "../store/cartSlice";

@@ -1,5 +1,4 @@
-admin-panel: 
+admin-panel:
 path: /admin
 
-
-production:   https://sultan-catalog.vercel.app/
+production: https://sultan-catalog.vercel.app/

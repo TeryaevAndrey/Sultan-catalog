@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { setProductsCart } from "../../store/cartSlice";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { setProductsCart } from "../../../../store/cartSlice";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
 import CartProduct from "./CartProduct";
 
 const CartProducts: FC = () => {
@@ -64,7 +64,10 @@ const CartProducts: FC = () => {
           <p className="text-3xl font-bold text-black-001">
             {sum.toFixed(2)} ₸
           </p>
-          <button className="px-20 py-8 bg-orange-001 rounded-[80px] w-full sm:max-w-[192px] sm:px-9 sm:py-5 font-bold text-sm" onClick={() => alert("Успешно!")}>
+          <button
+            className="px-20 py-8 bg-orange-001 rounded-[80px] w-full sm:max-w-[192px] sm:px-9 sm:py-5 font-bold text-sm"
+            onClick={() => alert("Успешно!")}
+          >
             Оформить заказ
           </button>
         </div>

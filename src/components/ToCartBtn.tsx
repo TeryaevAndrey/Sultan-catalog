@@ -6,8 +6,6 @@ interface IToCartBtn {
 }
 
 const ToCartBtn: FC<IToCartBtn> = ({ onClick, inCart }) => {
-  const productsCart = JSON.parse(localStorage.getItem("productsCart") || "[]");
-
   return (
     <button
       onClick={onClick}

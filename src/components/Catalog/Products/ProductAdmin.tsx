@@ -4,7 +4,7 @@ import { setEditProductInfo, setId } from "../../../store/editSlice";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { setProductsList } from "../../../store/productsSlice";
 import Characteristics from "../../Characteristics";
-import Weight from "../../Product/Weight";
+import Weight from "../../Weight";
 import productsData from "./products.json";
 
 interface IProductAdmin extends IProduct {

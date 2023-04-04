@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import CartImg from "../../assets/images/cart.svg";
-import { useAppSelector } from "../../store/hooks";
+import CartImg from "../../../../assets/images/cart.svg";
+import { useAppSelector } from "../../../../store/hooks";
 
 const Cart: FC = () => {
   const productsCart =

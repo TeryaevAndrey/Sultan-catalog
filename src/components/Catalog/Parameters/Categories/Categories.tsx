@@ -37,7 +37,7 @@ const Categories: FC<ICategories> = ({ categories }) => {
                 );
               }
 
-              dispatch(setSort({sortBy: "title", title: "Название"}));
+              dispatch(setSort({ sortBy: "title", title: "Название" }));
             }}
           >
             {el}

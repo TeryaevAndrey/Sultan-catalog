@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import CatalogBtn from "./CatalogBtn";
 import Search from "../Search";
 import PriceList from "../PriceList";
-import Cart from "./Cart";
+import Cart from "./HeaderTop/Cart/Cart";
 import { useAppSelector } from "../../store/hooks";
 
 const Header: FC = () => {
@@ -33,7 +33,9 @@ const Header: FC = () => {
             <Link className="relative cursor-pointer" to="/cart">
               <img className="w-6 h-6" src={CartImg} alt="cart" />
               <div className="flex justify-center items-center absolute w-5 h-5 -top-[6px] -right-[6px] bg-orange-001 rounded-full border-[3px] border-white border-solid">
-                <span className="font-bold text-[10px] text-white">{productsCart.length || 0}</span>
+                <span className="font-bold text-[10px] text-white">
+                  {productsCart.length || 0}
+                </span>
               </div>
             </Link>
           </div>

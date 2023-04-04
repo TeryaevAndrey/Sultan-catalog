@@ -9,22 +9,27 @@ const Sort: FC = () => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const sort = useAppSelector((state) => state.catalog.sort);
   const products = useAppSelector((state) => state.products.productsList);
+  const productsList = [...products];
 
-  const sortByTitle = () => {
-    const productsList = [...products];
-
+  const sortProducts = (by: "desc" | "asc"): IProduct[] => {
     let sortedProducts = productsList.sort((prev, current) => {
       let prevValue = prev.title.toLowerCase().split(" ")[0];
       let currentValue = current.title.toLowerCase().split(" ")[0];
 
       if (prevValue < currentValue) {
-        return -1;
+        return by === "desc" ? 1 : -1;
       }
       if (prevValue > currentValue) {
-        return 1;
+        return by === "desc" ? -1 : 1;
       }
       return 0;
     });
+
+    return sortedProducts;
+  };
+
+  const sortByTitle = () => {
+    let sortedProducts = sortProducts("asc");
 
     dispatch(setProductsList(sortedProducts));
   };
@@ -39,22 +44,11 @@ const Sort: FC = () => {
     dispatch(setProductsList(sortedProducts));
   };
 
-  const sortByDesk = () => {
+  const sortByDesс = () => {
     const productsList = [...products];
 
     if (sort.sortBy === "title") {
-      let sortedProducts = productsList.sort((prev, current) => {
-        let prevValue = prev.title.toLowerCase().split(" ")[0];
-        let currentValue = current.title.toLowerCase().split(" ")[0];
-
-        if (prevValue < currentValue) {
-          return 1;
-        }
-        if (prevValue > currentValue) {
-          return -1;
-        }
-        return 0;
-      });
+      let sortedProducts = sortProducts("desc");
 
       dispatch(setProductsList(sortedProducts));
     }
@@ -68,22 +62,11 @@ const Sort: FC = () => {
     }
   };
 
-  const sortByAsk = () => {
+  const sortByAsс = () => {
     const productsList = [...products];
 
     if (sort.sortBy === "title") {
-      let sortedProducts = productsList.sort((prev, current) => {
-        let prevValue = prev.title.toLowerCase().split(" ")[0];
-        let currentValue = current.title.toLowerCase().split(" ")[0];
-
-        if (prevValue < currentValue) {
-          return -1;
-        }
-        if (prevValue > currentValue) {
-          return 1;
-        }
-        return 0;
-      });
+      let sortedProducts = sortProducts("asc");
 
       dispatch(setProductsList(sortedProducts));
     }
@@ -144,7 +127,7 @@ const Sort: FC = () => {
               })
             );
 
-            sortByDesk();
+            sortByDesс();
             setIsOpen(false);
           }}
         >
@@ -161,7 +144,7 @@ const Sort: FC = () => {
                   "-(по возрастанию)",
               })
             );
-            sortByAsk();
+            sortByAsс();
             setIsOpen(false);
           }}
         >

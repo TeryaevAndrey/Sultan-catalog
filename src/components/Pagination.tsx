@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import PrevImg from "../assets/images/prev.svg";
 import NextImg from "../assets/images/next.svg";
-import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { setCurrentPage, setTotalPages } from "../store/paginationSlice";
 

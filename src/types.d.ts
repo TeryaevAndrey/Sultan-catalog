@@ -19,6 +19,6 @@ interface IProduct {
 }
 
 interface ICartProduct extends IProduct {
-  deleteProduct?: React.MouseEventHandler,
-  amount: number,
+  deleteProduct?: React.MouseEventHandler;
+  amount: number;
 }

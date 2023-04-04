@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { useAppSelector } from "../../../../store/hooks";
 import productsData from "../../Products/products.json";
 
 interface IManufacturersItem {

@@ -7,7 +7,7 @@ import Characteristics from "../components/Characteristics";
 import ArrowBottomImg from "../assets/images/sort-arrow.svg";
 import Back from "../components/Back";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-import Weight from "../components/Product/Weight";
+import Weight from "../components/Weight";
 import { setProductsCart } from "../store/cartSlice";
 
 const ProductPage: FC = () => {
@@ -192,10 +192,20 @@ const ProductPage: FC = () => {
                   onClick={() => setIsOpenDescription(!isOpenDescription)}
                 >
                   <span>Описание</span>
-                  <img className={`${isOpenDescription && "rotate-180"}`} src={ArrowBottomImg} alt="open" />
+                  <img
+                    className={`${isOpenDescription && "rotate-180"}`}
+                    src={ArrowBottomImg}
+                    alt="open"
+                  />
                 </div>
               </div>
-              <p className={`text-gray-001 mt-1 ${isOpenDescription ? "flex" : "hidden"}`}>{product.description}</p>
+              <p
+                className={`text-gray-001 mt-1 ${
+                  isOpenDescription ? "flex" : "hidden"
+                }`}
+              >
+                {product.description}
+              </p>
               {/* <div className="py-5 flex items-center gap-1 text-base text-black-001 font-medium cursor-pointer">
                 <span>Характеристики</span>
                 <img src={ArrowBottomImg} alt="open" />

@@ -1,9 +1,8 @@
 import React, { FC } from "react";
-import ProductImg from "../../../assets/images/products/product-1.png";
 import ToCartBtn from "../../ToCartBtn";
 import Characteristics from "../../Characteristics";
-import Weight from "../../Product/Weight";
-import { Link, useNavigate } from "react-router-dom";
+import Weight from "../../Weight";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../store/hooks";
 import { setCurrentProduct } from "../../../store/productsSlice";
 import { setProductsCart } from "../../../store/cartSlice";
