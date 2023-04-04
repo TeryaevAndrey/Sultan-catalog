@@ -69,6 +69,10 @@ const Products: FC = () => {
                 />
               );
             })}
+
+            {products.length === 0 && (
+              <p className="text-gray-001 text-xl">Пусто</p>
+            )}
       </div>
       <div
         className={`${totalPages > 1 ? "flex" : "hidden"} justify-center mt-12`}
