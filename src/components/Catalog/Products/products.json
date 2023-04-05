@@ -158,7 +158,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 90.54,
     "parameters": {
-      "hatch": 333333333,
+      "hatch": 110110110,
       "manufacturer": "CleanWave",
       "brand": "LOSK",
       "typeCare": ["Уход за одеждой"]
@@ -173,7 +173,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 5,
     "parameters": {
-      "hatch": 444444444,
+      "hatch": 1212121212,
       "manufacturer": "AquaWash",
       "brand": "Мариславна",
       "typeCare": ["Уход за руками"]
@@ -188,7 +188,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 4.6,
     "parameters": {
-      "hatch": 555555555,
+      "hatch": 13131313,
       "manufacturer": "AquaWash",
       "brand": "Absolute",
       "typeCare": ["Уход за руками"]
@@ -203,7 +203,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 5,
     "parameters": {
-      "hatch": 666666666,
+      "hatch": 14141414,
       "manufacturer": "PowerClean",
       "brand": "Весна",
       "typeCare": ["Уход за руками"]
@@ -218,7 +218,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 40.34,
     "parameters": {
-      "hatch": 777777777,
+      "hatch": 15151515,
       "manufacturer": "DeepCleanse",
       "brand": "Palmolive",
       "typeCare": ["Уход за волосами"]
@@ -233,7 +233,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
     "price": 30,
     "parameters": {
-      "hatch": 888888888,
+      "hatch": 16161616,
       "manufacturer": "DeepCleanse",
       "brand": "Shauma",
       "typeCare": ["Уход за руками"]
