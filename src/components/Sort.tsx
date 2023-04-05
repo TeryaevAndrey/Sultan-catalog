@@ -3,7 +3,8 @@ import SortImg from "../assets/images/sort-arrow.svg";
 import { setSort } from "../store/catalogSlice";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { setProductsList } from "../store/productsSlice";
-import sortProductsByTitle from "../utils/sortProducts";
+import sortProductsByTitle from "../utils/sortProductsByTitle";
+import sortProductsByPrice from "../utils/sortProductsByPrice";
 
 const Sort: FC = () => {
   const dispatch = useAppDispatch();
@@ -34,14 +35,10 @@ const Sort: FC = () => {
     }
 
     if (sort.sortBy === "price") {
-      let sortedProducts = productsList.sort((prev, current) => {
-        return current.price! - prev.price!;
-      });
+      let sortedProducts = sortProductsByPrice(productsList, "desc");
 
       dispatch(setProductsList(sortedProducts));
     }
-
-    console.log(products);
   };
 
   const sortByAsс = () => {
@@ -52,9 +49,7 @@ const Sort: FC = () => {
     }
 
     if (sort.sortBy === "price") {
-      let sortedProducts = productsList.sort((prev, current) => {
-        return prev.price! - current.price!;
-      });
+      let sortedProducts = sortProductsByPrice(productsList, "asc");
 
       dispatch(setProductsList(sortedProducts));
     }
