@@ -3,6 +3,7 @@ import SortImg from "../assets/images/sort-arrow.svg";
 import { setSort } from "../store/catalogSlice";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { setProductsList } from "../store/productsSlice";
+import sortProductsByTitle from "../utils/sortProducts";
 
 const Sort: FC = () => {
   const dispatch = useAppDispatch();
@@ -11,32 +12,13 @@ const Sort: FC = () => {
   const products = useAppSelector((state) => state.products.productsList);
   const productsList = [...products];
 
-  const sortProducts = (by: "desc" | "asc"): IProduct[] => {
-    let sortedProducts = productsList.sort((prev, current) => {
-      let prevValue = prev.title.toLowerCase().split(" ")[0];
-      let currentValue = current.title.toLowerCase().split(" ")[0];
-
-      if (prevValue < currentValue) {
-        return by === "desc" ? 1 : -1;
-      }
-      if (prevValue > currentValue) {
-        return by === "desc" ? -1 : 1;
-      }
-      return 0;
-    });
-
-    return sortedProducts;
-  };
-
   const sortByTitle = () => {
-    let sortedProducts = sortProducts("asc");
+    let sortedProducts = sortProductsByTitle(productsList, "asc");
 
     dispatch(setProductsList(sortedProducts));
   };
 
   const sortByPrice = () => {
-    const productsList = [...products];
-
     let sortedProducts = productsList.sort((prev, current) => {
       return prev.price! - current.price!;
     });
@@ -45,10 +27,8 @@ const Sort: FC = () => {
   };
 
   const sortByDesс = () => {
-    const productsList = [...products];
-
     if (sort.sortBy === "title") {
-      let sortedProducts = sortProducts("desc");
+      let sortedProducts = sortProductsByTitle(productsList, "desc");
 
       dispatch(setProductsList(sortedProducts));
     }
@@ -60,13 +40,13 @@ const Sort: FC = () => {
 
       dispatch(setProductsList(sortedProducts));
     }
+
+    console.log(products);
   };
 
   const sortByAsс = () => {
-    const productsList = [...products];
-
     if (sort.sortBy === "title") {
-      let sortedProducts = sortProducts("asc");
+      let sortedProducts = sortProductsByTitle(productsList, "asc");
 
       dispatch(setProductsList(sortedProducts));
     }
