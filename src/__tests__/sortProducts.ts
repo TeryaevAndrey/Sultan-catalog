@@ -158,6 +158,13 @@ describe("sort-products-by-title", () => {
 
     expect(sortedProducts).toEqual(expectedProducts);
   });
+
+  it("sort-empty", () => {
+    const products: [] = [];
+    const expectedProducts: [] = [];
+
+    expect(products).toEqual(expectedProducts);
+  });
 });
 
 describe("sort-products-by-price", () => {
@@ -322,5 +329,12 @@ describe("sort-products-by-price", () => {
     ];
 
     expect(sortedProducts).toEqual(expectedProducts);
+  });
+
+  it("sort-empty", () => {
+    const products: [] = [];
+    const expectedProducts: [] = [];
+
+    expect(products).toEqual(expectedProducts);
   });
 });
