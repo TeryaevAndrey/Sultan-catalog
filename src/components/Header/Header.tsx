@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import CatalogBtn from "./CatalogBtn";
 import Search from "../Search";
 import PriceList from "../PriceList";
-import Cart from "./HeaderTop/Cart/Cart";
+import Cart from "./Cart/Cart";
 import { useAppSelector } from "../../store/hooks";
 
 const Header: FC = () => {

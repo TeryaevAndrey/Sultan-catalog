@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { setProductsCart } from "../../../../store/cartSlice";
-import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import { setProductsCart } from "../../../store/cartSlice";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import CartProduct from "./CartProduct";
 
 const CartProducts: FC = () => {
