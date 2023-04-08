@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import PrevImg from "../assets/images/prev.svg";
 import NextImg from "../assets/images/next.svg";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
@@ -14,7 +14,7 @@ const Pagination: FC = () => {
   const pages: number[] = [];
   const perProducts = useAppSelector((state) => state.pagination.perProducts);
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch(setTotalPages(Math.ceil(products.length / perProducts)));
   }, [products]);
 
@@ -35,7 +35,10 @@ const Pagination: FC = () => {
   };
 
   return (
-    <div className="flex items-center gap-8">
+    <div
+      className={`${totalPages > 1 ? "flex" : "hidden"} items-center gap-8`}
+      data-testid="pag-wrapper"
+    >
       <img
         className="w-[9px] h-[16px] cursor-pointer"
         src={PrevImg}

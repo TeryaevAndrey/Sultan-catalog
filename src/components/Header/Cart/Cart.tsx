@@ -13,7 +13,7 @@ const Cart: FC = () => {
     let totalSum: number = 0;
 
     productsCart.forEach((product) => {
-      if(product.price) {
+      if (product.price) {
         totalSum += product.price * product.amount;
       }
     });

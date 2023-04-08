@@ -1,4 +1,7 @@
-const sortProductsByPrice = (productsList: IProduct[], by: "desc" | "asc"): IProduct[] => {
+const sortProductsByPrice = (
+  productsList: IProduct[],
+  by: "desc" | "asc"
+): IProduct[] => {
   let sortedProducts = productsList.sort((prev, current) => {
     return by === "desc"
       ? current.price! - prev.price!
