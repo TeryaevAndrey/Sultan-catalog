@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import CartImg from "../../../assets/images/cart.svg";
 import { useAppSelector } from "../../../store/hooks";
@@ -7,16 +7,18 @@ const Cart: FC = () => {
   const productsCart =
     useAppSelector((state) => state.cart.productsCart) ||
     JSON.parse(localStorage.getItem("productsCart") || "[]");
-  const [sum, setSum] = React.useState<number>(0);
+  const [sum, setSum] = useState<number>(0);
 
-  React.useEffect(() => {
-    let sum = 0;
+  useEffect(() => {
+    let totalSum: number = 0;
 
     productsCart.forEach((product) => {
-      sum += product.price! * product.amount;
+      if(product.price) {
+        totalSum += product.price * product.amount;
+      }
     });
 
-    setSum(sum);
+    setSum(totalSum);
   }, [productsCart]);
 
   return (
